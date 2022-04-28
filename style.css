@@ -1,0 +1,46 @@
+html {
+  font-family: "Roboto Condensed", sans-serif;
+  background: linear-gradient(
+    90deg,
+    rgba(88, 0, 99, 1) 0%,
+    rgba(121, 9, 118, 1) 80%
+  );
+  color: white;
+}
+.container {
+  display: grid;
+}
+
+@media only screen and (min-width: 960px) {
+  .container {
+    justify-content: space-around;
+  }
+}
+
+.container {
+  text-align: center;
+}
+
+a:link,
+a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+article {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+button {
+  background-color: #13aa52;
+  border: 1px solid #13aa52;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 25px;
+  text-align: center;
+}
