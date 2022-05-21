@@ -4,11 +4,14 @@ html {
 }
 .container {
   display: grid;
+  width: 100%;
+  margin: auto;
 }
 
 @media only screen and (min-width: 960px) {
   .container {
     justify-content: space-around;
+    width: 50%;
   }
 }
 
@@ -24,21 +27,28 @@ a:visited {
 
 a:hover {
   font-weight: bold;
+  text-decoration: underline;
 }
 
 article {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.04);
   padding: 1rem;
   border-radius: 10px;
-  background-color: lightgray;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 button {
   background-color: purple;
   border-radius: 4px;
-  box-sizing: border-box;
   color: #fff;
   cursor: pointer;
   padding: 10px 25px;
   text-align: center;
+}
+
+img {
+  clip-path: circle();
+  width: 30%;
+  margin: auto;
 }
