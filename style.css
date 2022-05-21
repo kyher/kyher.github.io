@@ -2,6 +2,7 @@ html {
   font-family: "Bitter", serif;
   background-color: #e6e6fa;
 }
+
 .container {
   display: grid;
   width: 100%;
@@ -40,11 +41,13 @@ article {
 
 button {
   background-color: purple;
+  font-family: "Bitter", serif;
   border-radius: 4px;
   color: #fff;
   cursor: pointer;
   padding: 10px 25px;
   text-align: center;
+  border: none;
 }
 
 img {
