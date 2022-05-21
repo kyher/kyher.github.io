@@ -1,11 +1,6 @@
 html {
   font-family: "Roboto Condensed", sans-serif;
-  background: linear-gradient(
-    90deg,
-    rgba(88, 0, 99, 1) 0%,
-    rgba(121, 9, 118, 1) 80%
-  );
-  color: white;
+  background-color: slate;
 }
 .container {
   display: grid;
@@ -23,7 +18,6 @@ html {
 
 a:link,
 a:visited {
-  color: white;
   text-decoration: none;
 }
 
@@ -33,14 +27,13 @@ a:hover {
 
 article {
   background: rgba(255, 255, 255, 0.2);
-  color: white;
   padding: 1rem;
   border-radius: 10px;
+  background-color: lightgray;
 }
 
 button {
-  background-color: #13aa52;
-  border: 1px solid #13aa52;
+  background-color: purple;
   border-radius: 4px;
   box-sizing: border-box;
   color: #fff;
