@@ -1,4 +1,4 @@
-html {
+:root {
   font-family: "Bitter", serif;
   background-color: #e6e6fa;
 }
@@ -16,23 +16,44 @@ html {
   }
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    background-color: #1b1c1c;
+    color: #e6e6fa;
+  }
+
+  article {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    background-color: #e6e6fa;
+    color: black;
+  }
+
+  article {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+}
+
 .container {
   text-align: center;
 }
 
-a:link {
+a:link,
+a:visited {
   font-weight: bold;
   text-decoration: none;
-  color: purple;
+  color: lightpurple;
 }
 
 a:hover {
-  font-weight: bold;
   text-decoration: underline;
 }
 
 article {
-  background: rgba(0, 0, 0, 0.04);
   padding: 1rem;
   border-radius: 10px;
   margin-top: 1rem;
