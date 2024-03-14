@@ -54,7 +54,7 @@ a:hover {
 }
 
 img {
-  clip-path: circle();
+  clip-path: circle(40% at 50% 44%);
   width: 30%;
   margin: auto;
 }
