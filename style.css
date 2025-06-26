@@ -58,3 +58,16 @@ img {
   width: 30%;
   margin: auto;
 }
+
+details {
+  padding: 1rem;
+  margin: auto;
+  cursor: pointer;
+  width: 75%;
+}
+
+summary {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
