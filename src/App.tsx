@@ -8,7 +8,7 @@ import ProjectTile from './components/ProjectTile';
 function App() {
   const [activeTab, setActiveTab] = useState(TABS.HOME);
   return (
-    <>
+    <main className="max-w-3xl m-auto p-4">
       <img src="profile.jpg" alt="Profile image of Kyle Heron" className='rounded-xl w-64 m-auto my-4 ' />
       <h1>Kyle Heron</h1>
       <nav>
@@ -42,7 +42,7 @@ function App() {
           </div>
         </AppSection>
       )}
-    </>
+    </main>
   )
 }
 
