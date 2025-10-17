@@ -3,6 +3,7 @@ import './App.css'
 import { TABS } from './helpers/consts';
 import AppSection from './components/AppSection';
 import NavItem from './components/NavItem';
+import ProjectTile from './components/ProjectTile';
 
 function App() {
   const [activeTab, setActiveTab] = useState(TABS.HOME);
@@ -13,25 +14,34 @@ function App() {
       <nav>
         <ul className='flex gap-4 mt-4 justify-center'>
           <NavItem label="Home" isActive={activeTab === TABS.HOME} onClick={() => setActiveTab(TABS.HOME)} />
-          <NavItem label="About" isActive={activeTab === TABS.ABOUT} onClick={() => setActiveTab(TABS.ABOUT)} />
           <NavItem label="Contact" isActive={activeTab === TABS.CONTACT} onClick={() => setActiveTab(TABS.CONTACT)} />
+          <NavItem label="Projects" isActive={activeTab === TABS.PROJECTS} onClick={() => setActiveTab(TABS.PROJECTS)} />
         </ul>
       </nav>
       {activeTab === TABS.HOME && (
         <AppSection title="Home">
-          <p>Welcome to my personal website!</p>
-        </AppSection>
-      )}
-      {activeTab === TABS.ABOUT && (
-        <AppSection title="About">
-          <p>This is the about section.</p>
+          <p>
+            A diligent, driven software engineer with a passion for improving processes and providing value.
+            Experienced in planning, designing, developing and deploying web applications across a multitude of technologies.
+          </p>
         </AppSection>
       )}
       {activeTab === TABS.CONTACT &&
         <AppSection title="Contact">
-          <p>Get in touch!</p>
+          <div className='flex flex-col gap-2'>
+            <a href='https://github.com/kyher'>GitHub</a>
+            <a href="mailto:kyle.heron@proton.me">Email me!</a>
+          </div>
         </AppSection>
       }
+      {activeTab === TABS.PROJECTS && (
+        <AppSection title="Projects">
+          <div className='flex flex-row gap-4'>
+            <ProjectTile name="Project One" stack="React, TypeScript" link='#' description="A web application that does amazing things." />
+            <ProjectTile name="Project Two" stack="Node.js, Express" link='#' description="A backend service that powers awesome features." />
+          </div>
+        </AppSection>
+      )}
     </>
   )
 }

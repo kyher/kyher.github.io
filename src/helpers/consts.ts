@@ -1,5 +1,5 @@
 export const TABS = {
     HOME: 'Home',
-    ABOUT: 'About',
+    PROJECTS: 'Projects',
     CONTACT: 'Contact'
 }
