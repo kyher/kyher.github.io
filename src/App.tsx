@@ -3,7 +3,6 @@ import "./App.css";
 import { TABS } from "./helpers/consts";
 import AppSection from "./components/AppSection";
 import NavItem from "./components/NavItem";
-import ProjectTile from "./components/ProjectTile";
 
 function App() {
   const [activeTab, setActiveTab] = useState(TABS.HOME);
@@ -54,20 +53,7 @@ function App() {
       )}
       {activeTab === TABS.PROJECTS && (
         <AppSection title="Projects">
-          <div className="flex flex-row gap-4">
-            <ProjectTile
-              name="Project One"
-              stack="React, TypeScript"
-              link="#"
-              description="A web application that does amazing things."
-            />
-            <ProjectTile
-              name="Project Two"
-              stack="Node.js, Express"
-              link="#"
-              description="A backend service that powers awesome features."
-            />
-          </div>
+          <p className="text-2xl">🚧 Under construction 🚧</p>
         </AppSection>
       )}
     </main>
