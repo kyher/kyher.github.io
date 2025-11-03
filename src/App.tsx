@@ -3,6 +3,7 @@ import "./App.css";
 import { TABS } from "./helpers/consts";
 import AppSection from "./components/AppSection";
 import NavItem from "./components/NavItem";
+import ProjectTile from "./components/ProjectTile";
 
 function App() {
   const [activeTab, setActiveTab] = useState(TABS.HOME);
@@ -53,7 +54,12 @@ function App() {
       )}
       {activeTab === TABS.PROJECTS && (
         <AppSection title="Projects">
-          <p className="text-2xl">🚧 Under construction 🚧</p>
+          <ProjectTile
+            name="I can't type french"
+            description="Basic react app for copying french keyboard characters to clipboard"
+            link="i-cant-type-french.vercel.app"
+            stack="Vite, React, TypeScript"
+          />
         </AppSection>
       )}
     </main>
