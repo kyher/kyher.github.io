@@ -57,7 +57,7 @@ function App() {
           <ProjectTile
             name="I can't type french"
             description="Basic react app for copying french keyboard characters to clipboard"
-            link="i-cant-type-french.vercel.app"
+            link="https://i-cant-type-french.vercel.app"
             stack="Vite, React, TypeScript"
           />
         </AppSection>
