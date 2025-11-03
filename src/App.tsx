@@ -14,7 +14,7 @@ function App() {
         alt="Profile image of Kyle Heron"
         className="rounded-xl w-64 m-auto my-4 "
       />
-      <h1>Kyle Heron</h1>
+      <h1 className="text-3xl">Kyle Heron</h1>
       <nav>
         <ul className="flex gap-4 mt-4 justify-center">
           <NavItem
@@ -47,8 +47,18 @@ function App() {
       {activeTab === TABS.CONTACT && (
         <AppSection title="Contact">
           <div className="flex flex-col gap-2">
-            <a href="https://github.com/kyher">GitHub</a>
-            <a href="mailto:kyle.heron@proton.me">Email me!</a>
+            <a
+              href="https://github.com/kyher"
+              className="text-lg hover:underline"
+            >
+              GitHub
+            </a>
+            <a
+              href="mailto:kyle.heron@proton.me"
+              className="text-lg hover:underline"
+            >
+              Email me!
+            </a>
           </div>
         </AppSection>
       )}
@@ -58,6 +68,7 @@ function App() {
             name="I can't type french"
             description="Basic react app for copying french keyboard characters to clipboard"
             link="https://i-cant-type-french.vercel.app"
+            repo="https://github.com/kyher/i-cant-type-french"
             stack="Vite, React, TypeScript"
           />
         </AppSection>
