@@ -12,7 +12,7 @@ export default function ProjectTile({
   repo: string;
 }) {
   return (
-    <div className="flex flex-col rounded-lg p-4 shadow hover:shadow-lg transition-shadow bg-gray-800/50">
+    <div className="flex flex-col rounded-lg p-4 shadow-xl hover:scale-105 bg-gray-800/80 transition-transform">
       <a
         href={link}
         className="text-xl font-bold mb-2 hover:underline"

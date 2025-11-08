@@ -9,12 +9,7 @@ function App() {
   const [activeTab, setActiveTab] = useState(TABS.HOME);
   return (
     <main className="max-w-3xl m-auto p-4">
-      <img
-        src="profile.jpg"
-        alt="Profile image of Kyle Heron"
-        className="rounded-xl w-64 m-auto my-4 "
-      />
-      <h1 className="text-3xl">Kyle Heron</h1>
+      <h1 className="text-3xl hover:font-bold">Kyle Heron</h1>
       <nav>
         <ul className="flex gap-4 mt-4 justify-center">
           <NavItem
@@ -34,9 +29,15 @@ function App() {
           />
         </ul>
       </nav>
+
       {activeTab === TABS.HOME && (
-        <AppSection title="Home">
-          <p>
+        <AppSection>
+          <img
+            src="profile.jpg"
+            alt="Profile image of Kyle Heron"
+            className="rounded-xl w-64 m-auto my-4 hover:scale-105 transition-transform"
+          />
+          <p className="hover:font-bold">
             A diligent, driven software engineer with a passion for improving
             processes and providing value. Experienced in planning, designing,
             developing and deploying web applications across a multitude of
@@ -45,17 +46,17 @@ function App() {
         </AppSection>
       )}
       {activeTab === TABS.CONTACT && (
-        <AppSection title="Contact">
+        <AppSection>
           <div className="flex flex-col gap-2">
             <a
               href="https://github.com/kyher"
-              className="text-lg hover:underline"
+              className="text-lg underline underline-offset-4 hover:font-bold"
             >
               GitHub
             </a>
             <a
               href="mailto:kyle.heron@proton.me"
-              className="text-lg hover:underline"
+              className="text-lg underline underline-offset-4 hover:font-bold"
             >
               Email me!
             </a>
@@ -63,7 +64,7 @@ function App() {
         </AppSection>
       )}
       {activeTab === TABS.PROJECTS && (
-        <AppSection title="Projects">
+        <AppSection>
           <div className="flex flex-col gap-4">
             <ProjectTile
               name="CoupleMDB"
