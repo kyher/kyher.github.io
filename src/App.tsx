@@ -64,13 +64,22 @@ function App() {
       )}
       {activeTab === TABS.PROJECTS && (
         <AppSection title="Projects">
-          <ProjectTile
-            name="I can't type french"
-            description="Basic react app for copying french keyboard characters to clipboard"
-            link="https://i-cant-type-french.vercel.app"
-            repo="https://github.com/kyher/i-cant-type-french"
-            stack="Vite, React, TypeScript"
-          />
+          <div className="flex flex-col gap-4">
+            <ProjectTile
+              name="CoupleMDB"
+              description="A movie database app for couples to compare their reviewed movies - 🚧 Work in progress 🚧"
+              link="https://couplemdb.vercel.app/"
+              repo="https://github.com/kyher/couplemdb"
+              stack="Next, TypeScript, TailwindCSS, Drizzle, NextAuth"
+            />
+            <ProjectTile
+              name="I can't type french"
+              description="Basic react app for copying french keyboard characters to clipboard"
+              link="https://i-cant-type-french.vercel.app"
+              repo="https://github.com/kyher/i-cant-type-french"
+              stack="Vite, React, TypeScript"
+            />
+          </div>
         </AppSection>
       )}
     </main>
