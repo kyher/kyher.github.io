@@ -68,14 +68,12 @@ function App() {
             <ProjectTile
               name="CoupleMDB"
               description={t("projects.couplemdb")}
-              link="https://couplemdb.vercel.app/"
               repo="https://github.com/kyher/couplemdb"
               stack="Next, TypeScript, TailwindCSS, Drizzle, NextAuth"
             />
             <ProjectTile
               name="I can't type french"
               description={t("projects.icanttypefrench")}
-              link="https://i-cant-type-french.vercel.app"
               repo="https://github.com/kyher/i-cant-type-french"
               stack="Vite, React, TypeScript"
             />
