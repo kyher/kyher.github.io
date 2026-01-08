@@ -77,6 +77,18 @@ function App() {
               repo="https://github.com/kyher/i-cant-type-french"
               stack="Vite, React, TypeScript"
             />
+            <ProjectTile
+              name="TrackStats"
+              description={t("projects.trackstats")}
+              repo="https://github.com/kyher/track-stats"
+              stack="Laravel, Vue, Inertia, TypeScript"
+            />
+            <ProjectTile
+              name="EmojiChat"
+              description={t("projects.emojichat")}
+              repo="https://github.com/kyher/emoji-chat"
+              stack="Laravel (with Reverb), Vue, Inertia, TypeScript"
+            />
           </div>
         </AppSection>
       )}

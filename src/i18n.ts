@@ -22,6 +22,10 @@ const resources = {
           "A movie database app for couples to compare their reviewed movies - 🚧 Work in progress 🚧",
         icanttypefrench:
           "Basic react app for copying french keyboard characters to clipboard",
+        trackstats:
+          "A web app for voting for the best F1 track - 🚧 Work in progress 🚧",
+        emojichat:
+          "A chat application that uses emojis as the primary means of communication - 🚧 Work in progress 🚧",
       },
     },
   },
@@ -42,6 +46,10 @@ const resources = {
           "Une application de base de données de films pour les couples afin de comparer leurs films évalués - 🚧 Travail en cours 🚧",
         icanttypefrench:
           "Application React basique pour copier des caractères de clavier français dans le presse-papiers",
+        trackstats:
+          "Une application web pour le vote en direct pour le meilleur circuit de F1 - 🚧 Travail en cours 🚧",
+        emojichat:
+          "Une application de chat qui utilise des emojis comme principal moyen de communication - 🚧 Travail en cours 🚧",
       },
     },
   },
