@@ -64,31 +64,54 @@ function App() {
       )}
       {activeTab === TABS.PROJECTS && (
         <AppSection>
-          <div className="flex flex-col gap-4">
+          <div className="my-6">
+            <h2 className="text-xl font-bold my-4">
+              {t("projects.currentTitle")}
+            </h2>
             <ProjectTile
-              name="CoupleMDB"
-              description={t("projects.couplemdb")}
-              repo="https://github.com/kyher/couplemdb"
-              stack="Next, TypeScript, TailwindCSS, Drizzle, NextAuth"
-            />
-            <ProjectTile
-              name="I can't type french"
-              description={t("projects.icanttypefrench")}
-              repo="https://github.com/kyher/i-cant-type-french"
-              stack="Vite, React, TypeScript"
-            />
-            <ProjectTile
-              name="TrackStats"
-              description={t("projects.trackstats")}
-              repo="https://github.com/kyher/track-stats"
+              name="Budgetr"
+              description={t("projects.budgetr")}
+              repo="https://github.com/kyher/budgetr"
               stack="Laravel, Vue, Inertia, TypeScript"
+              highlight
             />
-            <ProjectTile
-              name="EmojiChat"
-              description={t("projects.emojichat")}
-              repo="https://github.com/kyher/emoji-chat"
-              stack="Laravel (with Reverb), Vue, Inertia, TypeScript"
-            />
+          </div>
+          <div className="my-6">
+            <h2 className="text-xl font-bold my-4">
+              {t("projects.otherTitle")}
+            </h2>
+            <div className="flex flex-col gap-4">
+              <ProjectTile
+                name="CoupleMDB"
+                description={t("projects.couplemdb")}
+                repo="https://github.com/kyher/couplemdb"
+                stack="Next, TypeScript, TailwindCSS, Drizzle, NextAuth"
+              />
+              <ProjectTile
+                name="I can't type french"
+                description={t("projects.icanttypefrench")}
+                repo="https://github.com/kyher/i-cant-type-french"
+                stack="Vite, React, TypeScript"
+              />
+              <ProjectTile
+                name="TrackStats"
+                description={t("projects.trackstats")}
+                repo="https://github.com/kyher/track-stats"
+                stack="Laravel, Vue, Inertia, TypeScript"
+              />
+              <ProjectTile
+                name="EmojiChat"
+                description={t("projects.emojichat")}
+                repo="https://github.com/kyher/emoji-chat"
+                stack="Laravel (with Reverb), Vue, Inertia, TypeScript"
+              />
+              <ProjectTile
+                name="Recetterie"
+                description={t("projects.recetterie")}
+                repo="https://github.com/kyher/recetterie"
+                stack="Symfony"
+              />
+            </div>
           </div>
         </AppSection>
       )}

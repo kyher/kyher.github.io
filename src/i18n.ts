@@ -18,14 +18,18 @@ const resources = {
         email: "Email me",
       },
       projects: {
+        currentTitle: "Current Project",
+        otherTitle: "Previous Projects",
         couplemdb:
-          "A movie database app for couples to compare their reviewed movies - 🚧 Work in progress 🚧",
+          "A movie database app for couples to compare their reviewed movies",
         icanttypefrench:
           "Basic react app for copying french keyboard characters to clipboard",
-        trackstats:
-          "A web app for voting for the best F1 track - 🚧 Work in progress 🚧",
+        trackstats: "A web app for voting for the best F1 track",
         emojichat:
-          "A chat application that uses emojis as the primary means of communication - 🚧 Work in progress 🚧",
+          "A chat application that uses emojis as the primary means of communication",
+        recetterie: "A recipe management application to post and save recipes",
+        budgetr:
+          "A budgeting application that helps users manage their finances",
       },
     },
   },
@@ -42,14 +46,20 @@ const resources = {
         email: "Envoyez-moi un email",
       },
       projects: {
+        currentTitle: "Projet actuel",
+        otherTitle: "Projets précédents",
         couplemdb:
-          "Une application de base de données de films pour les couples afin de comparer leurs films évalués - 🚧 Travail en cours 🚧",
+          "Une application de base de données de films pour les couples afin de comparer leurs films évalués",
         icanttypefrench:
           "Application React basique pour copier des caractères de clavier français dans le presse-papiers",
         trackstats:
-          "Une application web pour le vote en direct pour le meilleur circuit de F1 - 🚧 Travail en cours 🚧",
+          "Une application web pour le vote en direct pour le meilleur circuit de F1",
         emojichat:
-          "Une application de chat qui utilise des emojis comme principal moyen de communication - 🚧 Travail en cours 🚧",
+          "Une application de chat qui utilise des emojis comme principal moyen de communication",
+        recetterie:
+          "Une application de gestion de recettes pour publier et enregistrer des recettes",
+        budgetr:
+          "Une application de budgétisation qui aide les utilisateurs à gérer leurs finances",
       },
     },
   },
