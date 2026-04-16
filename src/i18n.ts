@@ -18,8 +18,8 @@ const resources = {
         email: "Email me",
       },
       projects: {
-        currentTitle: "Current Project",
-        otherTitle: "Previous Projects",
+        currentTitle: "Current Side Project",
+        otherTitle: "Previous Side Projects",
         couplemdb:
           "A movie database app for couples to compare their reviewed movies",
         icanttypefrench:
@@ -30,6 +30,8 @@ const resources = {
         recetterie: "A recipe management application to post and save recipes",
         budgetr:
           "A budgeting application that helps users manage their finances",
+        healthdash:
+          "A health dashboard application for tracking health appointments",
       },
     },
   },
@@ -46,8 +48,8 @@ const resources = {
         email: "Envoyez-moi un email",
       },
       projects: {
-        currentTitle: "Projet actuel",
-        otherTitle: "Projets précédents",
+        currentTitle: "Projet personnel actuel",
+        otherTitle: "Projets personnels précédents",
         couplemdb:
           "Une application de base de données de films pour les couples afin de comparer leurs films évalués",
         icanttypefrench:
@@ -60,6 +62,8 @@ const resources = {
           "Une application de gestion de recettes pour publier et enregistrer des recettes",
         budgetr:
           "Une application de budgétisation qui aide les utilisateurs à gérer leurs finances",
+        healthdash:
+          "Une application de tableau de bord de santé pour le suivi des rendez-vous de santé",
       },
     },
   },
