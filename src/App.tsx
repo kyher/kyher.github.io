@@ -69,9 +69,9 @@ function App() {
               {t("projects.currentTitle")}
             </h2>
             <ProjectTile
-              name="HealthDash"
-              description={t("projects.healthdash")}
-              repo="https://github.com/kyher/health-dash"
+              name="Standupr"
+              description={t("projects.standupr")}
+              repo="https://github.com/kyher/standupr"
               stack="Laravel, Vue, Inertia, TypeScript"
               highlight
             />
@@ -81,6 +81,12 @@ function App() {
               {t("projects.otherTitle")}
             </h2>
             <div className="flex flex-col gap-4">
+              <ProjectTile
+                name="HealthDash"
+                description={t("projects.healthdash")}
+                repo="https://github.com/kyher/health-dash"
+                stack="Laravel, Vue, Inertia, TypeScript"
+              />
               <ProjectTile
                 name="Budgetr"
                 description={t("projects.budgetr")}
