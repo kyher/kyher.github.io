@@ -32,6 +32,7 @@ const resources = {
           "A budgeting application that helps users manage their finances",
         healthdash:
           "A health dashboard application for tracking health appointments",
+        standupr: "A standup meeting application for remote teams",
       },
     },
   },
@@ -64,6 +65,8 @@ const resources = {
           "Une application de budgétisation qui aide les utilisateurs à gérer leurs finances",
         healthdash:
           "Une application de tableau de bord de santé pour le suivi des rendez-vous de santé",
+        standupr:
+          "Une application de réunion debout pour les équipes à distance",
       },
     },
   },
