@@ -13,7 +13,10 @@ const resources = {
         projects: "Projects",
       },
       profile:
-        "A diligent, driven software engineer with a passion for improving processes and providing value. Experienced in planning, designing, developing and deploying web applications across a multitude of technologies.",
+        "A diligent, driven software engineer with a passion for improving processes and providing value. Experienced in planning, designing, developing and deploying web applications across a multitude of technologies. An advocate for AI-assisted development and leveraging modern tooling to ship better software, faster.",
+      skills: {
+        title: "Skills",
+      },
       contact: {
         email: "Email me",
       },
@@ -44,7 +47,10 @@ const resources = {
         projects: "Projets",
       },
       profile:
-        "Un ingénieur logiciel diligent et motivé, passionné par l'amélioration des processus et la création de valeur. Expérimenté dans la planification, la conception, le développement et le déploiement d'applications web à travers une multitude de technologies.",
+        "Un ingénieur logiciel diligent et motivé, passionné par l'amélioration des processus et la création de valeur. Expérimenté dans la planification, la conception, le développement et le déploiement d'applications web à travers une multitude de technologies. Partisan du développement assisté par IA et de l'utilisation d'outils modernes pour livrer de meilleurs logiciels, plus rapidement.",
+      skills: {
+        title: "Compétences",
+      },
       contact: {
         email: "Envoyez-moi un email",
       },
