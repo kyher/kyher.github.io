@@ -111,7 +111,7 @@ function App() {
               <h2 className="text-xl font-bold my-4">
                 {t("projects.otherTitle")}
               </h2>
-              <div className="flex flex-col gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <ProjectTile
                   name="HealthDash"
                   description={t("projects.healthdash")}
