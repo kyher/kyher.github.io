@@ -18,7 +18,10 @@ const skills = [
   "Laravel",
   "Symfony",
   "Tailwind CSS",
-  "Vite",
+  "AI",
+  "HTML",
+  "CSS",
+  "Tanstack Start",
 ];
 
 function App() {
@@ -40,7 +43,7 @@ function App() {
 
   return (
     <main className="max-w-3xl m-auto p-4">
-      <div className="relative flex justify-center mb-2">
+      <div className="flex flex-col items-center gap-3 mb-2">
         <div className="text-center">
           <h1 className="text-3xl font-bold tracking-tight">Kyle Heron</h1>
           <p className="text-gray-500 dark:text-gray-400 text-base mt-1">
@@ -48,7 +51,7 @@ function App() {
             Senior Software Engineer
           </p>
         </div>
-        <div className="absolute right-0 top-0 flex items-center gap-2">
+        <div className="flex items-center gap-2">
           <ThemeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} />
           <LanguageSelect />
         </div>
