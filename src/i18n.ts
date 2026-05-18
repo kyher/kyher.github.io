@@ -12,17 +12,20 @@ const resources = {
         contact: "Contact",
         projects: "Projects",
       },
-      profile:
-        "A diligent, driven senior software engineer with a passion for improving processes and providing value. Experienced in planning, designing, developing and deploying web applications across a multitude of technologies. An advocate for AI-assisted development and leveraging modern tooling to ship better software, faster.",
+      profile: {
+        title: "// profile",
+        description:
+          "A diligent, driven senior software engineer with a passion for improving processes and providing value. Experienced in planning, designing, developing and deploying web applications across a multitude of technologies. An advocate for AI-assisted development and leveraging modern tooling to ship better software, faster.",
+      },
       skills: {
-        title: "Skills",
+        title: "// skills",
       },
       contact: {
         email: "Email me",
       },
       projects: {
-        currentTitle: "Current Side Project",
-        otherTitle: "Previous Side Projects",
+        currentTitle: "// current side project",
+        otherTitle: "// previous side projects",
         couplemdb:
           "A movie database app for couples to compare their reviewed movies",
         icanttypefrench:
@@ -46,17 +49,20 @@ const resources = {
         contact: "Contact",
         projects: "Projets",
       },
-      profile:
-        "Un ingénieur logiciel senior diligent et motivé, passionné par l'amélioration des processus et la création de valeur. Expérimenté dans la planification, la conception, le développement et le déploiement d'applications web à travers une multitude de technologies. Partisan du développement assisté par IA et de l'utilisation d'outils modernes pour livrer de meilleurs logiciels, plus rapidement.",
+      profile: {
+        title: "// profil",
+        description:
+          "Un ingénieur logiciel senior diligent et motivé, passionné par l'amélioration des processus et la création de valeur. Expérimenté dans la planification, la conception, le développement et le déploiement d'applications web à travers une multitude de technologies. Partisan du développement assisté par IA et de l'utilisation d'outils modernes pour livrer de meilleurs logiciels, plus rapidement.",
+      },
       skills: {
-        title: "Compétences",
+        title: "// compétences",
       },
       contact: {
         email: "Envoyez-moi un email",
       },
       projects: {
-        currentTitle: "Projet personnel actuel",
-        otherTitle: "Projets personnels précédents",
+        currentTitle: "// projet personnel actuel",
+        otherTitle: "// projets personnels précédents",
         couplemdb:
           "Une application de base de données de films pour les couples afin de comparer leurs films évalués",
         icanttypefrench:

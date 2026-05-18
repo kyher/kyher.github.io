@@ -9,8 +9,10 @@ export default function NavItem({
 }) {
   return (
     <li
-      className={`hover:bg-purple-700 rounded text-lg cursor-pointer p-2 ${
-        isActive ? "font-bold bg-purple-900" : ""
+      className={`text-lg cursor-pointer pb-1 transition-colors border-b-2 ${
+        isActive
+          ? "border-purple-400 text-white font-semibold"
+          : "border-transparent text-gray-400 hover:text-purple-300"
       }`}
       onClick={onClick}
     >
