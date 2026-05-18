@@ -5,7 +5,7 @@ export default function LanguageSelect() {
 
   return (
     <select
-      className="bg-gray-700 text-white rounded p-1 mb-4 hover:cursor-pointer"
+      className="bg-gray-100 text-gray-900 border border-gray-200 dark:bg-gray-700 dark:text-white dark:border-transparent rounded p-1 hover:cursor-pointer"
       onChange={(e) => {
         i18n.changeLanguage(e.target.value);
       }}
