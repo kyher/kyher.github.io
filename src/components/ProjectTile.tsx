@@ -17,7 +17,7 @@ export default function ProjectTile({
 }) {
   return (
     <div
-      className={`flex flex-col rounded-lg shadow-xl hover:scale-105 bg-gray-800/80 transition-transform overflow-hidden ${highlight ? "ring-2 ring-blue-500" : ""}`}
+      className={`flex flex-col rounded-lg shadow-sm dark:shadow-xl hover:scale-105 bg-white border border-gray-200 dark:bg-gray-800/80 dark:border-transparent transition-transform overflow-hidden ${highlight ? "ring-2 ring-blue-500" : ""}`}
     >
       {image ? (
         <img src={image} alt={`${name} screenshot`} className="w-full h-32 object-cover" />
@@ -35,7 +35,7 @@ export default function ProjectTile({
         >
           {name}
         </a>
-        <p className="text-gray-400 mb-2">{stack}</p>
+        <p className="text-gray-500 dark:text-gray-400 mb-2">{stack}</p>
         <p>{description}</p>
       </div>
     </div>

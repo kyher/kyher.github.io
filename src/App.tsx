@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import { TABS } from "./helpers/consts";
 import AppSection from "./components/AppSection";
 import NavItem from "./components/NavItem";
 import ProjectTile from "./components/ProjectTile";
+import ThemeToggle from "./components/ThemeToggle";
 import { useTranslation } from "react-i18next";
 import LanguageSelect from "./components/LanguageSelect";
 
@@ -22,11 +23,36 @@ const skills = [
 
 function App() {
   const [activeTab, setActiveTab] = useState(TABS.HOME);
+  const [isDark, setIsDark] = useState(() =>
+    document.documentElement.classList.contains("dark"),
+  );
   const { t } = useTranslation();
+
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [isDark]);
+
   return (
     <main className="max-w-3xl m-auto p-4">
-      <LanguageSelect />
-      <h1 className="text-3xl hover:font-bold">Kyle Heron</h1>
+      <div className="relative flex justify-center mb-2">
+        <div className="text-center">
+          <h1 className="text-3xl font-bold tracking-tight">Kyle Heron</h1>
+          <p className="text-gray-500 dark:text-gray-400 text-base mt-1">
+            <span className="text-purple-600 dark:text-purple-400">›</span>{" "}
+            Senior Software Engineer
+          </p>
+        </div>
+        <div className="absolute right-0 top-0 flex items-center gap-2">
+          <ThemeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} />
+          <LanguageSelect />
+        </div>
+      </div>
       <nav>
         <ul className="flex gap-4 mt-4 justify-center">
           <NavItem
@@ -35,14 +61,14 @@ function App() {
             onClick={() => setActiveTab(TABS.HOME)}
           />
           <NavItem
-            label={t("nav.contact")}
-            isActive={activeTab === TABS.CONTACT}
-            onClick={() => setActiveTab(TABS.CONTACT)}
-          />
-          <NavItem
             label={t("nav.projects")}
             isActive={activeTab === TABS.PROJECTS}
             onClick={() => setActiveTab(TABS.PROJECTS)}
+          />
+          <NavItem
+            label={t("nav.contact")}
+            isActive={activeTab === TABS.CONTACT}
+            onClick={() => setActiveTab(TABS.CONTACT)}
           />
         </ul>
       </nav>
@@ -53,16 +79,21 @@ function App() {
             <img
               src="profile.jpg"
               alt="Profile image of Kyle Heron"
-              className="rounded-xl w-64 m-auto my-4 hover:scale-105 transition-transform"
+              className="rounded-xl w-64 m-auto my-4 hover:scale-105 transition-transform ring-1 ring-gray-300 dark:ring-gray-600"
             />
-            <p className="hover:font-bold">{t("profile")}</p>
+            <h2 className="text-purple-600 dark:text-purple-400 text-lg mb-3">
+              {t("profile.title")}
+            </h2>
+            <p>{t("profile.description")}</p>
             <div className="mt-6">
-              <h2 className="text-lg font-bold mb-3">{t("skills.title")}</h2>
+              <h2 className="text-purple-600 dark:text-purple-400 text-lg mb-3">
+                {t("skills.title")}
+              </h2>
               <div className="flex flex-wrap gap-2 justify-center">
                 {skills.map((skill) => (
                   <span
                     key={skill}
-                    className="text-sm bg-gray-800/80 px-3 py-1 rounded-full text-gray-300"
+                    className="text-sm bg-gray-100 border border-gray-300 px-3 py-1 rounded-full text-gray-700 dark:bg-gray-800/60 dark:border-gray-600 dark:text-gray-300"
                   >
                     {skill}
                   </span>
@@ -94,7 +125,7 @@ function App() {
         {activeTab === TABS.PROJECTS && (
           <AppSection>
             <div className="my-6">
-              <h2 className="text-xl font-bold my-4">
+              <h2 className="text-purple-600 dark:text-purple-400 text-lg mb-3">
                 {t("projects.currentTitle")}
               </h2>
               <ProjectTile
@@ -108,7 +139,7 @@ function App() {
               />
             </div>
             <div className="my-6">
-              <h2 className="text-xl font-bold my-4">
+              <h2 className="text-purple-600 dark:text-purple-400 text-lg mb-3">
                 {t("projects.otherTitle")}
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
