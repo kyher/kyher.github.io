@@ -132,12 +132,12 @@ function App() {
                 {t("projects.currentTitle")}
               </h2>
               <ProjectTile
-                name="Standupr"
-                description={t("projects.standupr")}
-                repo="https://github.com/kyher/standupr"
-                stack="Laravel, Vue, Inertia, TypeScript"
-                gradient="from-blue-600 to-indigo-700"
-                image="standupr.jpg"
+                name="myhours"
+                description={t("projects.myhours")}
+                repo="https://github.com/kyher/myhours"
+                stack="Tanstack Start, TypeScript, Prisma"
+                gradient="from-violet-600 to-purple-700"
+                image="myhours.png"
                 highlight
               />
             </div>
@@ -145,7 +145,15 @@ function App() {
               <h2 className="text-purple-600 dark:text-purple-400 text-lg mb-3">
                 {t("projects.otherTitle")}
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <ProjectTile
+                  name="Standupr"
+                  description={t("projects.standupr")}
+                  repo="https://github.com/kyher/standupr"
+                  stack="Laravel, Vue, Inertia, TypeScript"
+                  gradient="from-blue-600 to-indigo-700"
+                  image="standupr.jpg"
+                />
                 <ProjectTile
                   name="HealthDash"
                   description={t("projects.healthdash")}
