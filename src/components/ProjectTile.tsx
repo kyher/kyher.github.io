@@ -17,13 +17,21 @@ export default function ProjectTile({
 }) {
   return (
     <div
-      className={`flex flex-col rounded-lg shadow-sm dark:shadow-xl hover:scale-105 bg-white border border-gray-200 dark:bg-gray-800/80 dark:border-transparent transition-transform overflow-hidden ${highlight ? "ring-2 ring-blue-500" : ""}`}
+      className={`flex flex-col rounded-lg shadow-sm dark:shadow-xl hover:scale-105 bg-white border border-gray-200 dark:bg-gray-800/80 dark:border-transparent transition-transform overflow-hidden`}
     >
       {image ? (
-        <img src={image} alt={`${name} screenshot`} className="w-full h-32 object-cover" />
+        <img
+          src={image}
+          alt={`${name} screenshot`}
+          className={`w-full object-cover object-top ${highlight ? "h-64" : "h-32"}`}
+        />
       ) : (
-        <div className={`w-full h-32 bg-gradient-to-br ${gradient} flex items-center justify-center`}>
-          <span className="text-4xl font-bold text-white/20 select-none">{name[0]}</span>
+        <div
+          className={`w-full bg-gradient-to-br ${gradient} flex items-center justify-center ${highlight ? "h-64" : "h-32"}`}
+        >
+          <span className="text-4xl font-bold text-white/20 select-none">
+            {name[0]}
+          </span>
         </div>
       )}
       <div className="p-4">

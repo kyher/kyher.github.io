@@ -39,6 +39,7 @@ const resources = {
         healthdash:
           "A health dashboard application for tracking health appointments",
         standupr: "A standup meeting application for remote teams",
+        myhours: "App for showing your working hours",
       },
     },
   },
@@ -79,6 +80,7 @@ const resources = {
           "Une application de tableau de bord de santé pour le suivi des rendez-vous de santé",
         standupr:
           "Une application de réunion debout pour les équipes à distance",
+        myhours: "Une application pour afficher vos heures de travail",
       },
     },
   },
