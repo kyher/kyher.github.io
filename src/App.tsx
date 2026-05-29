@@ -132,12 +132,12 @@ function App() {
                 {t("projects.currentTitle")}
               </h2>
               <ProjectTile
-                name="myhours"
-                description={t("projects.myhours")}
-                repo="https://github.com/kyher/myhours"
-                stack="Tanstack Start, TypeScript, Prisma"
-                gradient="from-violet-600 to-purple-700"
-                image="myhours.png"
+                name="C'est moi le chef"
+                description={t("projects.cest-moi-le-chef")}
+                repo="https://github.com/kyher/cest-moi-le-chef"
+                stack="Tanstack Start, TypeScript"
+                gradient="from-orange-500 to-red-600"
+                image="cestmoilechef.png"
                 highlight
               />
             </div>
@@ -146,6 +146,14 @@ function App() {
                 {t("projects.otherTitle")}
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <ProjectTile
+                  name="myhours"
+                  description={t("projects.myhours")}
+                  repo="https://github.com/kyher/myhours"
+                  stack="Tanstack Start, TypeScript, Prisma"
+                  gradient="from-violet-600 to-purple-700"
+                  image="myhours.png"
+                />
                 <ProjectTile
                   name="Standupr"
                   description={t("projects.standupr")}
@@ -195,13 +203,6 @@ function App() {
                   repo="https://github.com/kyher/emoji-chat"
                   stack="Laravel (with Reverb), Vue, Inertia, TypeScript"
                   gradient="from-amber-400 to-yellow-600"
-                />
-                <ProjectTile
-                  name="Recetterie"
-                  description={t("projects.recetterie")}
-                  repo="https://github.com/kyher/recetterie"
-                  stack="Symfony"
-                  gradient="from-orange-500 to-amber-700"
                 />
               </div>
             </div>
