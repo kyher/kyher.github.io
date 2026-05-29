@@ -33,13 +33,13 @@ const resources = {
         trackstats: "A web app for voting for the best F1 track",
         emojichat:
           "A chat application that uses emojis as the primary means of communication",
-        recetterie: "A recipe management application to post and save recipes",
-        budgetr:
+budgetr:
           "A budgeting application that helps users manage their finances",
         healthdash:
           "A health dashboard application for tracking health appointments",
         standupr: "A standup meeting application for remote teams",
         myhours: "App for showing your working hours",
+        "cest-moi-le-chef": "An application for managing recipes",
       },
     },
   },
@@ -72,15 +72,14 @@ const resources = {
           "Une application web pour le vote en direct pour le meilleur circuit de F1",
         emojichat:
           "Une application de chat qui utilise des emojis comme principal moyen de communication",
-        recetterie:
-          "Une application de gestion de recettes pour publier et enregistrer des recettes",
-        budgetr:
+budgetr:
           "Une application de budgétisation qui aide les utilisateurs à gérer leurs finances",
         healthdash:
           "Une application de tableau de bord de santé pour le suivi des rendez-vous de santé",
         standupr:
           "Une application de réunion debout pour les équipes à distance",
         myhours: "Une application pour afficher vos heures de travail",
+        "cest-moi-le-chef": "Une application pour gérer les recettes",
       },
     },
   },
