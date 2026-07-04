@@ -117,7 +117,7 @@ function App() {
                 GitHub
               </a>
               <a
-                href="mailto:kyle.heron@proton.me"
+                href="mailto:kyleheron4@gmail.com"
                 className="text-lg underline underline-offset-4 hover:font-bold"
               >
                 {t("contact.email")}
