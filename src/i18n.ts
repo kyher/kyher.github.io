@@ -40,6 +40,7 @@ budgetr:
         standupr: "A standup meeting application for remote teams",
         myhours: "App for showing your working hours",
         "cest-moi-le-chef": "An application for managing recipes",
+        cochonnet: "A solo, daily score-attack game based on pétanque",
       },
     },
   },
@@ -80,6 +81,8 @@ budgetr:
           "Une application de réunion debout pour les équipes à distance",
         myhours: "Une application pour afficher vos heures de travail",
         "cest-moi-le-chef": "Une application pour gérer les recettes",
+        cochonnet:
+          "Un jeu solo en attaque de score quotidien basé sur la pétanque",
       },
     },
   },

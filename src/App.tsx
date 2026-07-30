@@ -132,12 +132,12 @@ function App() {
                 {t("projects.currentTitle")}
               </h2>
               <ProjectTile
-                name="C'est moi le chef"
-                description={t("projects.cest-moi-le-chef")}
-                repo="https://github.com/kyher/cest-moi-le-chef"
-                stack="Tanstack Start, TypeScript"
-                gradient="from-orange-500 to-red-600"
-                image="cestmoilechef.png"
+                name="Cochonnet"
+                description={t("projects.cochonnet")}
+                repo="https://github.com/kyher/cochonnet"
+                stack="Vite, React, TypeScript"
+                gradient="from-stone-500 to-amber-700"
+                image="cochonnet.png"
                 highlight
               />
             </div>
@@ -146,6 +146,14 @@ function App() {
                 {t("projects.otherTitle")}
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <ProjectTile
+                  name="C'est moi le chef"
+                  description={t("projects.cest-moi-le-chef")}
+                  repo="https://github.com/kyher/cest-moi-le-chef"
+                  stack="Tanstack Start, TypeScript"
+                  gradient="from-orange-500 to-red-600"
+                  image="cestmoilechef.png"
+                />
                 <ProjectTile
                   name="myhours"
                   description={t("projects.myhours")}
