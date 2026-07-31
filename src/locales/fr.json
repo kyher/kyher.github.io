@@ -1,0 +1,35 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "contact": "Contact",
+    "projects": "Projets",
+    "ariaLabel": "Sections du site"
+  },
+  "profile": {
+    "title": "// profil",
+    "description": "Un ingénieur logiciel senior diligent et motivé, passionné par l'amélioration des processus et la création de valeur. Expérimenté dans la planification, la conception, le développement et le déploiement d'applications web à travers une multitude de technologies. Partisan du développement assisté par IA et de l'utilisation d'outils modernes pour livrer de meilleurs logiciels, plus rapidement."
+  },
+  "skills": {
+    "title": "// compétences"
+  },
+  "contact": {
+    "email": "Envoyez-moi un email"
+  },
+  "language": {
+    "select": "Langue"
+  },
+  "projects": {
+    "currentTitle": "// projet personnel actuel",
+    "otherTitle": "// projets personnels précédents",
+    "couplemdb": "Une application de base de données de films pour les couples afin de comparer leurs films évalués",
+    "icanttypefrench": "Application React basique pour copier des caractères de clavier français dans le presse-papiers",
+    "trackstats": "Une application web pour le vote en direct pour le meilleur circuit de F1",
+    "emojichat": "Une application de chat qui utilise des emojis comme principal moyen de communication",
+    "budgetr": "Une application de budgétisation qui aide les utilisateurs à gérer leurs finances",
+    "healthdash": "Une application de tableau de bord de santé pour le suivi des rendez-vous de santé",
+    "standupr": "Une application de réunion debout pour les équipes à distance",
+    "myhours": "Une application pour afficher vos heures de travail",
+    "cest-moi-le-chef": "Une application pour gérer les recettes",
+    "cochonnet": "Un jeu solo en attaque de score quotidien basé sur la pétanque"
+  }
+}
