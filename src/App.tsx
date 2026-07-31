@@ -24,12 +24,45 @@ const skills = [
   "Tanstack Start",
 ];
 
+const tabId = (tab: string) => `tab-${tab.toLowerCase()}`;
+const panelId = (tab: string) => `panel-${tab.toLowerCase()}`;
+
 function App() {
   const [activeTab, setActiveTab] = useState(TABS.HOME);
   const [isDark, setIsDark] = useState(() =>
     document.documentElement.classList.contains("dark"),
   );
   const { t } = useTranslation();
+
+  const handleTabListKeyDown = (e: React.KeyboardEvent<HTMLUListElement>) => {
+    const tabs = Array.from(
+      e.currentTarget.querySelectorAll<HTMLButtonElement>('[role="tab"]'),
+    );
+    const currentIndex = tabs.indexOf(document.activeElement as HTMLButtonElement);
+    if (currentIndex === -1) return;
+
+    let newIndex: number;
+    switch (e.key) {
+      case "ArrowRight":
+        newIndex = (currentIndex + 1) % tabs.length;
+        break;
+      case "ArrowLeft":
+        newIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+        break;
+      case "Home":
+        newIndex = 0;
+        break;
+      case "End":
+        newIndex = tabs.length - 1;
+        break;
+      default:
+        return;
+    }
+
+    e.preventDefault();
+    tabs[newIndex].focus();
+    tabs[newIndex].click();
+  };
 
   useEffect(() => {
     if (isDark) {
@@ -51,24 +84,39 @@ function App() {
             Senior Software Engineer
           </p>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
           <ThemeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} />
+          <div
+            className="h-4 w-px bg-gray-300 dark:bg-gray-600"
+            aria-hidden="true"
+          />
           <LanguageSelect />
         </div>
       </div>
       <nav>
-        <ul className="flex gap-4 mt-4 justify-center">
+        <ul
+          role="tablist"
+          aria-label={t("nav.ariaLabel")}
+          className="flex gap-4 mt-4 justify-center"
+          onKeyDown={handleTabListKeyDown}
+        >
           <NavItem
+            id={tabId(TABS.HOME)}
+            controls={panelId(TABS.HOME)}
             label={t("nav.home")}
             isActive={activeTab === TABS.HOME}
             onClick={() => setActiveTab(TABS.HOME)}
           />
           <NavItem
+            id={tabId(TABS.PROJECTS)}
+            controls={panelId(TABS.PROJECTS)}
             label={t("nav.projects")}
             isActive={activeTab === TABS.PROJECTS}
             onClick={() => setActiveTab(TABS.PROJECTS)}
           />
           <NavItem
+            id={tabId(TABS.CONTACT)}
+            controls={panelId(TABS.CONTACT)}
             label={t("nav.contact")}
             isActive={activeTab === TABS.CONTACT}
             onClick={() => setActiveTab(TABS.CONTACT)}
@@ -76,7 +124,14 @@ function App() {
         </ul>
       </nav>
 
-      <div key={activeTab} className="tab-content">
+      <div
+        key={activeTab}
+        id={panelId(activeTab)}
+        role="tabpanel"
+        aria-labelledby={tabId(activeTab)}
+        tabIndex={0}
+        className="tab-content"
+      >
         {activeTab === TABS.HOME && (
           <AppSection>
             <img
