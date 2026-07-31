@@ -11,6 +11,7 @@ const resources = {
         home: "Home",
         contact: "Contact",
         projects: "Projects",
+        ariaLabel: "Site sections",
       },
       profile: {
         title: "// profile",
@@ -22,6 +23,9 @@ const resources = {
       },
       contact: {
         email: "Email me",
+      },
+      language: {
+        select: "Language",
       },
       projects: {
         currentTitle: "// current side project",
@@ -50,6 +54,7 @@ budgetr:
         home: "Accueil",
         contact: "Contact",
         projects: "Projets",
+        ariaLabel: "Sections du site",
       },
       profile: {
         title: "// profil",
@@ -61,6 +66,9 @@ budgetr:
       },
       contact: {
         email: "Envoyez-moi un email",
+      },
+      language: {
+        select: "Langue",
       },
       projects: {
         currentTitle: "// projet personnel actuel",

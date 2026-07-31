@@ -16,8 +16,11 @@ export default function ProjectTile({
   gradient?: string;
 }) {
   return (
-    <div
-      className={`flex flex-col rounded-lg shadow-sm dark:shadow-xl hover:scale-105 bg-white border border-gray-200 dark:bg-gray-800/80 dark:border-transparent transition-transform overflow-hidden`}
+    <a
+      href={repo}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`group flex flex-col rounded-lg shadow-sm dark:shadow-xl hover:scale-105 bg-white border border-gray-200 dark:bg-gray-800/80 dark:border-transparent transition-transform overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500`}
     >
       {image ? (
         <img
@@ -35,17 +38,12 @@ export default function ProjectTile({
         </div>
       )}
       <div className="p-4">
-        <a
-          href={repo}
-          className="text-xl font-bold mb-2 hover:underline"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <span className="block text-xl font-bold mb-2 group-hover:underline">
           {name}
-        </a>
+        </span>
         <p className="text-gray-500 dark:text-gray-400 mb-2">{stack}</p>
         <p>{description}</p>
       </div>
-    </div>
+    </a>
   );
 }
