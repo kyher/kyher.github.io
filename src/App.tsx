@@ -4,6 +4,7 @@ import ProjectTile from "./components/ProjectTile";
 import ThemeToggle from "./components/ThemeToggle";
 import { useTranslation } from "react-i18next";
 import LanguageSelect from "./components/LanguageSelect";
+import { languageLocales, resolveLanguage } from "./helpers/language";
 
 const skills = [
   "TypeScript", "PHP", "React", "Vue", "Next.js", "Inertia.js", "Laravel",
@@ -45,7 +46,7 @@ function App() {
     document.documentElement.classList.contains("dark"),
   );
   const { t, i18n } = useTranslation();
-  const locale = i18n.resolvedLanguage === "fr" ? "fr-FR" : "en-GB";
+  const locale = languageLocales[resolveLanguage(i18n.resolvedLanguage)];
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", isDark);
@@ -70,6 +71,7 @@ function App() {
 
       <nav className="main-nav" aria-label={t("nav.ariaLabel")}>
         <a href="#about">{t("nav.home")}</a>
+        <a href="#experience">{t("nav.experience")}</a>
         <a href="#projects">{t("nav.projects")}</a>
         <a href="#contact">{t("nav.contact")}</a>
       </nav>

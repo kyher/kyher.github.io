@@ -1,6 +1,7 @@
 {
   "nav": {
     "home": "Accueil",
+    "experience": "Expérience",
     "contact": "Contact",
     "projects": "Projets",
     "ariaLabel": "Sections du site"
