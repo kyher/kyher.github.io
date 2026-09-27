@@ -1,286 +1,160 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import { TABS } from "./helpers/consts";
-import AppSection from "./components/AppSection";
-import NavItem from "./components/NavItem";
 import ProjectTile from "./components/ProjectTile";
 import ThemeToggle from "./components/ThemeToggle";
 import { useTranslation } from "react-i18next";
 import LanguageSelect from "./components/LanguageSelect";
 
 const skills = [
-  "TypeScript",
-  "PHP",
-  "React",
-  "Vue",
-  "Next.js",
-  "Inertia.js",
-  "Laravel",
-  "Symfony",
-  "Tailwind CSS",
-  "AI",
-  "HTML",
-  "CSS",
-  "Tanstack Start",
+  "TypeScript", "PHP", "React", "Vue", "Next.js", "Inertia.js", "Laravel",
+  "Symfony", "Tailwind CSS", "AI", "HTML", "CSS", "Tanstack Start",
 ];
 
-const tabId = (tab: string) => `tab-${tab.toLowerCase()}`;
-const panelId = (tab: string) => `panel-${tab.toLowerCase()}`;
+const formatRange = (start: string, end: string | null, locale: string, present: string) => {
+  const formatMonth = (value: string) => new Intl.DateTimeFormat(locale, {
+    month: "short",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(new Date(`${value}-01T00:00:00Z`));
+  return `${formatMonth(start)} – ${end ? formatMonth(end) : present}`;
+};
+
+const experience = [
+  {
+    company: "Komodo Digital",
+    period: ["2020-02", null] as const,
+    roles: [
+      { title: "Senior Software Engineer", dates: ["2026-03", null] as const },
+      { title: "Software Engineer", dates: ["2023-04", "2026-03"] as const },
+      { title: "Software QA Engineer", dates: ["2021-04", "2023-04"] as const },
+      { title: "Associate Software Quality Assurance Engineer", dates: ["2020-02", "2021-04"] as const },
+    ],
+  },
+  {
+    company: "Accenture",
+    period: ["2014-09", "2020-02"] as const,
+    roles: [
+      { title: "Application Support Engineer", dates: ["2017-09", "2020-02"] as const },
+      { title: "Associate Software Engineer", type: "apprenticeship", dates: ["2014-09", "2017-09"] as const },
+    ],
+  },
+];
 
 function App() {
-  const [activeTab, setActiveTab] = useState(TABS.HOME);
   const [isDark, setIsDark] = useState(() =>
     document.documentElement.classList.contains("dark"),
   );
-  const { t } = useTranslation();
-
-  const handleTabListKeyDown = (e: React.KeyboardEvent<HTMLUListElement>) => {
-    const tabs = Array.from(
-      e.currentTarget.querySelectorAll<HTMLButtonElement>('[role="tab"]'),
-    );
-    const currentIndex = tabs.indexOf(document.activeElement as HTMLButtonElement);
-    if (currentIndex === -1) return;
-
-    let newIndex: number;
-    switch (e.key) {
-      case "ArrowRight":
-        newIndex = (currentIndex + 1) % tabs.length;
-        break;
-      case "ArrowLeft":
-        newIndex = (currentIndex - 1 + tabs.length) % tabs.length;
-        break;
-      case "Home":
-        newIndex = 0;
-        break;
-      case "End":
-        newIndex = tabs.length - 1;
-        break;
-      default:
-        return;
-    }
-
-    e.preventDefault();
-    tabs[newIndex].focus();
-    tabs[newIndex].click();
-  };
+  const { t, i18n } = useTranslation();
+  const locale = i18n.resolvedLanguage === "fr" ? "fr-FR" : "en-GB";
 
   useEffect(() => {
-    if (isDark) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
+    document.documentElement.classList.toggle("dark", isDark);
+    localStorage.setItem("theme", isDark ? "dark" : "light");
   }, [isDark]);
 
+  const featured = [
+    { name: "BetaReadr", descriptionKey: "betareadr", href: "https://betareadr-dev.on-forge.com/", stack: "Laravel, Vue, Inertia, TypeScript", image: "betareadr.png", gradient: "from-purple-600 to-fuchsia-700", highlight: true },
+    { name: "Cochonnet", descriptionKey: "cochonnet", href: "https://github.com/kyher/cochonnet", stack: "Vite, React, TypeScript", image: "cochonnet.png", gradient: "from-stone-500 to-amber-700" },
+    { name: "C'est moi le chef", descriptionKey: "cest-moi-le-chef", href: "https://github.com/kyher/cest-moi-le-chef", stack: "Tanstack Start, TypeScript", image: "cestmoilechef.png", gradient: "from-orange-500 to-red-600" },
+  ];
   return (
-    <main className="max-w-3xl m-auto p-4">
-      <div className="flex flex-col items-center gap-3 mb-2">
-        <div className="text-center">
-          <h1 className="text-3xl font-bold tracking-tight">Kyle Heron</h1>
-          <p className="text-gray-500 dark:text-gray-400 text-base mt-1">
-            <span className="text-purple-600 dark:text-purple-400">›</span>{" "}
-            Senior Software Engineer
-          </p>
-        </div>
-        <div className="flex items-center gap-3 rounded-full border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50 px-4 py-2">
+    <main className="site-shell">
+      <header className="site-header">
+        <a className="brand" href="#top" aria-label="Kyle Heron home">KH<span>.</span></a>
+        <div className="header-tools">
           <ThemeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} />
-          <div
-            className="h-5 w-px bg-gray-300 dark:bg-gray-600"
-            aria-hidden="true"
-          />
+          <span className="h-5 w-px bg-gray-300 dark:bg-gray-600" aria-hidden="true" />
           <LanguageSelect />
         </div>
-      </div>
-      <nav>
-        <ul
-          role="tablist"
-          aria-label={t("nav.ariaLabel")}
-          className="flex gap-4 mt-4 justify-center"
-          onKeyDown={handleTabListKeyDown}
-        >
-          <NavItem
-            id={tabId(TABS.HOME)}
-            controls={panelId(TABS.HOME)}
-            label={t("nav.home")}
-            isActive={activeTab === TABS.HOME}
-            onClick={() => setActiveTab(TABS.HOME)}
-          />
-          <NavItem
-            id={tabId(TABS.PROJECTS)}
-            controls={panelId(TABS.PROJECTS)}
-            label={t("nav.projects")}
-            isActive={activeTab === TABS.PROJECTS}
-            onClick={() => setActiveTab(TABS.PROJECTS)}
-          />
-          <NavItem
-            id={tabId(TABS.CONTACT)}
-            controls={panelId(TABS.CONTACT)}
-            label={t("nav.contact")}
-            isActive={activeTab === TABS.CONTACT}
-            onClick={() => setActiveTab(TABS.CONTACT)}
-          />
-        </ul>
+      </header>
+
+      <nav className="main-nav" aria-label={t("nav.ariaLabel")}>
+        <a href="#about">{t("nav.home")}</a>
+        <a href="#projects">{t("nav.projects")}</a>
+        <a href="#contact">{t("nav.contact")}</a>
       </nav>
 
-      <div
-        key={activeTab}
-        id={panelId(activeTab)}
-        role="tabpanel"
-        aria-labelledby={tabId(activeTab)}
-        tabIndex={0}
-        className="tab-content"
-      >
-        {activeTab === TABS.HOME && (
-          <AppSection>
-            <img
-              src="profile.jpg"
-              alt="Profile image of Kyle Heron"
-              className="rounded-xl w-64 m-auto my-4 hover:scale-105 transition-transform ring-1 ring-gray-300 dark:ring-gray-600"
-            />
-            <h2 className="text-purple-600 dark:text-purple-400 text-lg mb-3">
-              {t("profile.title")}
-            </h2>
-            <p>{t("profile.description")}</p>
-            <div className="mt-6">
-              <h2 className="text-purple-600 dark:text-purple-400 text-lg mb-3">
-                {t("skills.title")}
-              </h2>
-              <div className="flex flex-wrap gap-2 justify-center">
-                {skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="text-sm bg-gray-100 border border-gray-300 px-3 py-1 rounded-full text-gray-700 dark:bg-gray-800/60 dark:border-gray-600 dark:text-gray-300"
-                  >
-                    {skill}
-                  </span>
+      <section className="hero" id="top">
+        <div className="hero-copy-block" id="about">
+          <p className="eyebrow">Kyle Heron</p>
+          <h1>{t("hero.title")}</h1>
+          <p className="hero-copy">{t("profile.description")}</p>
+          <div className="hero-actions">
+            <a className="button" href="mailto:kyleheron4@gmail.com">{t("contact.email")}</a>
+            <a className="button button-secondary" href="#experience">{t("hero.viewExperience")}</a>
+          </div>
+        </div>
+        <div className="hero-photo-wrap">
+          <img src="profile.jpg" alt="Kyle Heron" className="hero-photo" />
+        </div>
+      </section>
+
+      <section className="section" id="experience">
+        <div className="section-heading">
+          <div><p className="eyebrow">{t("experience.eyebrow")}</p><h2>{t("experience.title")}</h2></div>
+        </div>
+        <div className="experience-list">
+          {experience.map((job) => (
+            <article className="employer" key={job.company}>
+              <div className="employer-heading">
+                <h3>{job.company}</h3>
+                <p>{formatRange(job.period[0], job.period[1], locale, t("experience.present"))}</p>
+                <p>{t("experience.location")}</p>
+              </div>
+              <ol className="role-list">
+                {job.roles.map((role) => (
+                  <li className="role" key={role.title}>
+                    <h4>{role.title}</h4>
+                    {role.type && <p>{t(`experience.types.${role.type}`)}</p>}
+                    <p>{formatRange(role.dates[0], role.dates[1], locale, t("experience.present"))}</p>
+                  </li>
                 ))}
-              </div>
-            </div>
-          </AppSection>
-        )}
-        {activeTab === TABS.CONTACT && (
-          <AppSection>
-            <div className="flex flex-col gap-2">
-              <a
-                href="https://github.com/kyher"
-                className="text-lg underline underline-offset-4 hover:font-bold"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub
-              </a>
-              <a
-                href="mailto:kyleheron4@gmail.com"
-                className="text-lg underline underline-offset-4 hover:font-bold"
-              >
-                {t("contact.email")}
-              </a>
-            </div>
-          </AppSection>
-        )}
-        {activeTab === TABS.PROJECTS && (
-          <AppSection>
-            <div className="my-6">
-              <h2 className="text-purple-600 dark:text-purple-400 text-lg mb-3">
-                {t("projects.currentTitle")}
-              </h2>
-              <ProjectTile
-                name="BetaReadr"
-                description={t("projects.betareadr")}
-                href="https://betareadr-dev.on-forge.com/"
-                linkLabel={t("projects.developmentPreview")}
-                stack="Laravel, Vue, Inertia, TypeScript"
-                gradient="from-purple-600 to-fuchsia-700"
-                image="betareadr.png"
-                highlight
-              />
-            </div>
-            <div className="my-6">
-              <h2 className="text-purple-600 dark:text-purple-400 text-lg mb-3">
-                {t("projects.otherTitle")}
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <ProjectTile
-                  name="Cochonnet"
-                  description={t("projects.cochonnet")}
-                  href="https://github.com/kyher/cochonnet"
-                  stack="Vite, React, TypeScript"
-                  gradient="from-stone-500 to-amber-700"
-                  image="cochonnet.png"
-                />
-                <ProjectTile
-                  name="C'est moi le chef"
-                  description={t("projects.cest-moi-le-chef")}
-                  href="https://github.com/kyher/cest-moi-le-chef"
-                  stack="Tanstack Start, TypeScript"
-                  gradient="from-orange-500 to-red-600"
-                  image="cestmoilechef.png"
-                />
-                <ProjectTile
-                  name="myhours"
-                  description={t("projects.myhours")}
-                  href="https://github.com/kyher/myhours"
-                  stack="Tanstack Start, TypeScript, Prisma"
-                  gradient="from-violet-600 to-purple-700"
-                  image="myhours.png"
-                />
-                <ProjectTile
-                  name="Standupr"
-                  description={t("projects.standupr")}
-                  href="https://github.com/kyher/standupr"
-                  stack="Laravel, Vue, Inertia, TypeScript"
-                  gradient="from-blue-600 to-indigo-700"
-                  image="standupr.jpg"
-                />
-                <ProjectTile
-                  name="HealthDash"
-                  description={t("projects.healthdash")}
-                  href="https://github.com/kyher/health-dash"
-                  stack="Laravel, Vue, Inertia, TypeScript"
-                  gradient="from-emerald-500 to-teal-700"
-                />
-                <ProjectTile
-                  name="Budgetr"
-                  description={t("projects.budgetr")}
-                  href="https://github.com/kyher/budgetr"
-                  stack="Laravel, Vue, Inertia, TypeScript"
-                  gradient="from-green-600 to-emerald-800"
-                />
-                <ProjectTile
-                  name="CoupleMDB"
-                  description={t("projects.couplemdb")}
-                  href="https://github.com/kyher/couplemdb"
-                  stack="Next, TypeScript, TailwindCSS, Drizzle, NextAuth"
-                  gradient="from-rose-500 to-pink-700"
-                />
-                <ProjectTile
-                  name="I can't type french"
-                  description={t("projects.icanttypefrench")}
-                  href="https://github.com/kyher/i-cant-type-french"
-                  stack="Vite, React, TypeScript"
-                  gradient="from-blue-400 to-sky-600"
-                />
-                <ProjectTile
-                  name="TrackStats"
-                  description={t("projects.trackstats")}
-                  href="https://github.com/kyher/track-stats"
-                  stack="Laravel, Vue, Inertia, TypeScript"
-                  gradient="from-red-600 to-orange-700"
-                />
-                <ProjectTile
-                  name="EmojiChat"
-                  description={t("projects.emojichat")}
-                  href="https://github.com/kyher/emoji-chat"
-                  stack="Laravel (with Reverb), Vue, Inertia, TypeScript"
-                  gradient="from-amber-400 to-yellow-600"
-                />
-              </div>
-            </div>
-          </AppSection>
-        )}
-      </div>
+              </ol>
+            </article>
+          ))}
+        </div>
+        <div className="education">
+          <p className="eyebrow">{t("education.eyebrow")}</p>
+          <h3>{t("education.university")}</h3>
+          <p>{t("education.degree")}</p>
+        </div>
+      </section>
+
+      <section className="section" id="projects">
+        <div className="section-heading">
+          <div><p className="eyebrow">{t("projects.eyebrow")}</p><h2>{t("projects.title")}</h2><p>{t("projects.description")}</p></div>
+        </div>
+        <div className="featured-projects">
+          <ProjectTile {...featured[0]} description={t(`projects.${featured[0].descriptionKey}`)} />
+          <div className="featured-secondary">
+            {featured.slice(1).map((project) => (
+              <ProjectTile key={project.name} {...project} description={t(`projects.${project.descriptionKey}`)} />
+            ))}
+          </div>
+        </div>
+        <p className="github-more"><a className="text-link" href="https://github.com/kyher" target="_blank" rel="noopener noreferrer">{t("projects.github")}</a></p>
+      </section>
+
+      <section className="section" id="skills">
+        <div className="section-heading">
+          <div><p className="eyebrow">{t("skills.eyebrow")}</p><h2>{t("skills.title")}</h2></div>
+        </div>
+        <div className="skills-list">
+          {skills.map((skill) => <span className="skill" key={skill}>{skill}</span>)}
+        </div>
+      </section>
+
+      <section className="section" id="contact">
+        <div className="contact-panel">
+          <div><p className="eyebrow">{t("contact.eyebrow")}</p><h2>{t("contact.title")}</h2><p>{t("contact.description")}</p></div>
+          <div className="contact-links">
+            <a className="button" href="mailto:kyleheron4@gmail.com">{t("contact.email")}</a>
+            <a href="https://github.com/kyher" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/kyher/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </section>
+      <footer className="site-footer">© {new Date().getFullYear()} Kyle Heron</footer>
     </main>
   );
 }

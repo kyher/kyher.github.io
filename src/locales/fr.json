@@ -6,32 +6,48 @@
     "ariaLabel": "Sections du site"
   },
   "profile": {
-    "title": "// profil",
     "description": "Un ingénieur logiciel senior diligent et motivé, passionné par l'amélioration des processus et la création de valeur. Expérimenté dans la planification, la conception, le développement et le déploiement d'applications web à travers une multitude de technologies. Partisan du développement assisté par IA et de l'utilisation d'outils modernes pour livrer de meilleurs logiciels, plus rapidement."
   },
   "skills": {
-    "title": "// compétences"
+    "eyebrow": "Boîte à outils",
+    "title": "Compétences"
   },
   "contact": {
-    "email": "Envoyez-moi un email"
+    "email": "Envoyez-moi un email",
+    "eyebrow": "Un petit bonjour",
+    "title": "Restons en contact",
+    "description": "Envie d’en savoir plus sur mon travail ou mon parcours ? Je serais ravi d’en discuter."
   },
   "language": {
-    "select": "Langue"
+    "select": "Langue",
+    "en": "Anglais",
+    "fr": "Français"
   },
   "projects": {
-    "currentTitle": "// projet personnel actuel",
-    "otherTitle": "// projets personnels précédents",
-    "couplemdb": "Une application de base de données de films pour les couples afin de comparer leurs films évalués",
-    "icanttypefrench": "Application React basique pour copier des caractères de clavier français dans le presse-papiers",
-    "trackstats": "Une application web pour le vote en direct pour le meilleur circuit de F1",
-    "emojichat": "Une application de chat qui utilise des emojis comme principal moyen de communication",
-    "budgetr": "Une application de budgétisation qui aide les utilisateurs à gérer leurs finances",
-    "healthdash": "Une application de tableau de bord de santé pour le suivi des rendez-vous de santé",
-    "standupr": "Une application de réunion debout pour les équipes à distance",
-    "myhours": "Une application pour afficher vos heures de travail",
+    "eyebrow": "En dehors du travail",
+    "title": "Projets personnels",
+    "description": "Quelques projets que j’ai réalisés en parallèle de mon travail.",
+    "github": "Plus sur GitHub ↗",
     "cest-moi-le-chef": "Une application pour gérer les recettes",
     "cochonnet": "Un jeu solo en attaque de score quotidien basé sur la pétanque",
-    "betareadr": "BetaReadr met en relation les auteurs à la recherche de retours utiles avant publication et les bêta-lecteurs qui souhaitent contribuer à façonner les livres qui leur tiennent à cœur.",
-    "developmentPreview": "Aperçu en développement"
+    "betareadr": "BetaReadr met en relation les auteurs à la recherche de retours utiles avant publication et les bêta-lecteurs qui souhaitent contribuer à façonner les livres qui leur tiennent à cœur."
+  },
+  "hero": {
+    "title": "Ingénieur logiciel senior",
+    "viewExperience": "Voir mon expérience"
+  },
+  "experience": {
+    "eyebrow": "Parcours",
+    "title": "Expérience",
+    "location": "Newcastle upon Tyne, Angleterre, Royaume-Uni",
+    "present": "Aujourd’hui",
+    "types": {
+      "apprenticeship": "Apprentissage"
+    }
+  },
+  "education": {
+    "eyebrow": "Formation",
+    "university": "University of Sunderland",
+    "degree": "Bachelor’s degree · Digital and Technology Solutions"
   }
 }
