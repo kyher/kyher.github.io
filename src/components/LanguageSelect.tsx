@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 
 export default function LanguageSelect() {
   const { i18n, t } = useTranslation();
-  const language = i18n.resolvedLanguage?.startsWith("fr") ? "fr" : "en";
+  const language = i18n.resolvedLanguage === "fr" ? "fr" : "en";
 
   return (
     <div className="language-switch" role="group" aria-label={t("language.select")}>
