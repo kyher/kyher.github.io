@@ -187,12 +187,13 @@ function App() {
                 {t("projects.currentTitle")}
               </h2>
               <ProjectTile
-                name="Cochonnet"
-                description={t("projects.cochonnet")}
-                repo="https://github.com/kyher/cochonnet"
-                stack="Vite, React, TypeScript"
-                gradient="from-stone-500 to-amber-700"
-                image="cochonnet.png"
+                name="BetaReadr"
+                description={t("projects.betareadr")}
+                href="https://betareadr-dev.on-forge.com/"
+                linkLabel={t("projects.developmentPreview")}
+                stack="Laravel, Vue, Inertia, TypeScript"
+                gradient="from-purple-600 to-fuchsia-700"
+                image="betareadr.png"
                 highlight
               />
             </div>
@@ -202,9 +203,17 @@ function App() {
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <ProjectTile
+                  name="Cochonnet"
+                  description={t("projects.cochonnet")}
+                  href="https://github.com/kyher/cochonnet"
+                  stack="Vite, React, TypeScript"
+                  gradient="from-stone-500 to-amber-700"
+                  image="cochonnet.png"
+                />
+                <ProjectTile
                   name="C'est moi le chef"
                   description={t("projects.cest-moi-le-chef")}
-                  repo="https://github.com/kyher/cest-moi-le-chef"
+                  href="https://github.com/kyher/cest-moi-le-chef"
                   stack="Tanstack Start, TypeScript"
                   gradient="from-orange-500 to-red-600"
                   image="cestmoilechef.png"
@@ -212,7 +221,7 @@ function App() {
                 <ProjectTile
                   name="myhours"
                   description={t("projects.myhours")}
-                  repo="https://github.com/kyher/myhours"
+                  href="https://github.com/kyher/myhours"
                   stack="Tanstack Start, TypeScript, Prisma"
                   gradient="from-violet-600 to-purple-700"
                   image="myhours.png"
@@ -220,7 +229,7 @@ function App() {
                 <ProjectTile
                   name="Standupr"
                   description={t("projects.standupr")}
-                  repo="https://github.com/kyher/standupr"
+                  href="https://github.com/kyher/standupr"
                   stack="Laravel, Vue, Inertia, TypeScript"
                   gradient="from-blue-600 to-indigo-700"
                   image="standupr.jpg"
@@ -228,42 +237,42 @@ function App() {
                 <ProjectTile
                   name="HealthDash"
                   description={t("projects.healthdash")}
-                  repo="https://github.com/kyher/health-dash"
+                  href="https://github.com/kyher/health-dash"
                   stack="Laravel, Vue, Inertia, TypeScript"
                   gradient="from-emerald-500 to-teal-700"
                 />
                 <ProjectTile
                   name="Budgetr"
                   description={t("projects.budgetr")}
-                  repo="https://github.com/kyher/budgetr"
+                  href="https://github.com/kyher/budgetr"
                   stack="Laravel, Vue, Inertia, TypeScript"
                   gradient="from-green-600 to-emerald-800"
                 />
                 <ProjectTile
                   name="CoupleMDB"
                   description={t("projects.couplemdb")}
-                  repo="https://github.com/kyher/couplemdb"
+                  href="https://github.com/kyher/couplemdb"
                   stack="Next, TypeScript, TailwindCSS, Drizzle, NextAuth"
                   gradient="from-rose-500 to-pink-700"
                 />
                 <ProjectTile
                   name="I can't type french"
                   description={t("projects.icanttypefrench")}
-                  repo="https://github.com/kyher/i-cant-type-french"
+                  href="https://github.com/kyher/i-cant-type-french"
                   stack="Vite, React, TypeScript"
                   gradient="from-blue-400 to-sky-600"
                 />
                 <ProjectTile
                   name="TrackStats"
                   description={t("projects.trackstats")}
-                  repo="https://github.com/kyher/track-stats"
+                  href="https://github.com/kyher/track-stats"
                   stack="Laravel, Vue, Inertia, TypeScript"
                   gradient="from-red-600 to-orange-700"
                 />
                 <ProjectTile
                   name="EmojiChat"
                   description={t("projects.emojichat")}
-                  repo="https://github.com/kyher/emoji-chat"
+                  href="https://github.com/kyher/emoji-chat"
                   stack="Laravel (with Reverb), Vue, Inertia, TypeScript"
                   gradient="from-amber-400 to-yellow-600"
                 />

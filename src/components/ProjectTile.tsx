@@ -2,7 +2,8 @@ export default function ProjectTile({
   name,
   stack,
   description,
-  repo,
+  href,
+  linkLabel,
   highlight,
   image,
   gradient = "from-gray-600 to-gray-700",
@@ -10,14 +11,15 @@ export default function ProjectTile({
   name: string;
   stack: string;
   description: string;
-  repo: string;
+  href: string;
+  linkLabel?: string;
   highlight?: boolean;
   image?: string;
   gradient?: string;
 }) {
   return (
     <a
-      href={repo}
+      href={href}
       target="_blank"
       rel="noopener noreferrer"
       className={`group flex flex-col rounded-lg shadow-sm dark:shadow-xl hover:scale-105 bg-white border border-gray-200 dark:bg-gray-800/80 dark:border-transparent transition-transform overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500`}
@@ -43,6 +45,7 @@ export default function ProjectTile({
         </span>
         <p className="text-gray-500 dark:text-gray-400 mb-2">{stack}</p>
         <p>{description}</p>
+        {linkLabel && <p className="mt-3 text-sm font-medium underline">{linkLabel}</p>}
       </div>
     </a>
   );
