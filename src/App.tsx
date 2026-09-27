@@ -105,7 +105,7 @@ function App() {
                 {job.roles.map((role) => (
                   <li className="role" key={role.title}>
                     <h4>{role.title}</h4>
-                    {role.type && <p>{t(`experience.types.${role.type}`)}</p>}
+                    {"type" in role && <p>{t(`experience.types.${role.type}`)}</p>}
                     <p>{formatRange(role.dates[0], role.dates[1], locale, t("experience.present"))}</p>
                   </li>
                 ))}
