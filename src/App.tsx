@@ -54,7 +54,7 @@ function App() {
   }, [isDark]);
 
   const featured = [
-    { name: "BetaReadr", descriptionKey: "betareadr", href: "https://betareadr-dev.on-forge.com/", stack: "Laravel, Vue, Inertia, TypeScript", image: "betareadr.png", gradient: "from-purple-600 to-fuchsia-700", highlight: true },
+    { name: "BetaReadr", descriptionKey: "betareadr", stack: "Laravel, Vue, Inertia, TypeScript", image: "betareadr.png", gradient: "from-purple-600 to-fuchsia-700", highlight: true },
     { name: "Cochonnet", descriptionKey: "cochonnet", href: "https://github.com/kyher/cochonnet", stack: "Vite, React, TypeScript", image: "cochonnet.png", gradient: "from-stone-500 to-amber-700" },
     { name: "C'est moi le chef", descriptionKey: "cest-moi-le-chef", href: "https://github.com/kyher/cest-moi-le-chef", stack: "Tanstack Start, TypeScript", image: "cestmoilechef.png", gradient: "from-orange-500 to-red-600" },
   ];

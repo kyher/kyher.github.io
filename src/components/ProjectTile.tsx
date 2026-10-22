@@ -10,18 +10,14 @@ export default function ProjectTile({
   name: string;
   stack: string;
   description: string;
-  href: string;
+  href?: string;
   highlight?: boolean;
   image?: string;
   gradient?: string;
 }) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`project-card ${highlight ? "project-featured" : ""}`}
-    >
+  const className = `project-card ${highlight ? "project-featured" : ""}`;
+  const content = (
+    <>
       {image ? (
         <img
           src={image}
@@ -41,6 +37,14 @@ export default function ProjectTile({
         <p className="project-stack">{stack}</p>
         <p className="project-description">{description}</p>
       </div>
+    </>
+  );
+
+  return href ? (
+    <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
+      {content}
     </a>
+  ) : (
+    <div className={className}>{content}</div>
   );
 }
