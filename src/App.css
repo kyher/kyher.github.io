@@ -169,7 +169,7 @@
   transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
 
-.project-card:hover {
+a.project-card:hover {
   transform: translateY(-5px);
   border-color: color-mix(in srgb, var(--accent) 40%, var(--line));
   box-shadow: 0 18px 44px rgb(40 25 20 / 9%);
