@@ -23,7 +23,7 @@ function App() {
   return (
     <main className="site-shell">
       <header className="site-header">
-        <a className="brand" href="#top" aria-label="Kyle Heron home">KH<span>.</span></a>
+        <a className="brand" href="#top" aria-label={t("a11y.home")}>KH<span>.</span></a>
         <div className="header-tools">
           <ThemeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} />
           <span className="h-5 w-px bg-gray-300 dark:bg-gray-600" aria-hidden="true" />

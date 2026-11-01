@@ -2,22 +2,39 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import en from "./locales/en.json";
 import fr from "./locales/fr.json";
+import { resolveLanguage } from "./helpers/language";
+
+export const LANGUAGE_STORAGE_KEY = "language";
 
 const resources = {
   en: { translation: en },
   fr: { translation: fr },
 };
 
+// Prefer the visitor's saved choice, then their browser language, then English.
+const initialLanguage = () => {
+  try {
+    const stored = localStorage.getItem(LANGUAGE_STORAGE_KEY);
+    if (stored) return resolveLanguage(stored);
+  } catch {
+    // Storage can be unavailable (e.g. blocked site data); fall through.
+  }
+  return resolveLanguage(navigator.language?.slice(0, 2));
+};
+
+// Keep <html lang> in sync so screen readers pronounce content correctly.
+i18n.on("languageChanged", (language) => {
+  document.documentElement.lang = resolveLanguage(language);
+});
+
 i18n
-  .use(initReactI18next) // passes i18n down to react-i18next
+  .use(initReactI18next)
   .init({
     resources,
-    lng: "en", // language to use, more information here: https://www.i18next.com/overview/configuration-options#languages-namespaces-resources
-    // you can use the i18n.changeLanguage function to change the language manually: https://www.i18next.com/overview/api#changelanguage
-    // if you're using a language detector, do not define the lng option
-
+    lng: initialLanguage(),
+    fallbackLng: "en",
     interpolation: {
-      escapeValue: false, // react already safes from xss
+      escapeValue: false, // React already escapes rendered values
     },
   });
 

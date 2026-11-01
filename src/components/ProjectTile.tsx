@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 export default function ProjectTile({
   name,
   stack,
@@ -15,13 +17,14 @@ export default function ProjectTile({
   image?: string;
   gradient?: string;
 }) {
+  const { t } = useTranslation();
   const className = `project-card ${highlight ? "project-featured" : ""}`;
   const content = (
     <>
       {image ? (
         <img
           src={image}
-          alt={`${name} screenshot`}
+          alt={t("a11y.projectScreenshot", { name })}
           className="project-image"
           width={1200}
           height={640}

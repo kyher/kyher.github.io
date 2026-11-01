@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 export default function ThemeToggle({
   isDark,
   onToggle,
@@ -5,11 +7,12 @@ export default function ThemeToggle({
   isDark: boolean;
   onToggle: () => void;
 }) {
+  const { t } = useTranslation();
   return (
     <button
       onClick={onToggle}
       className="flex cursor-pointer text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 rounded-sm"
-      aria-label="Toggle theme"
+      aria-label={t("a11y.toggleTheme")}
       aria-pressed={isDark}
     >
       {isDark ? (
