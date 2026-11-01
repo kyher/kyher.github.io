@@ -22,9 +22,11 @@ const initialLanguage = () => {
   return resolveLanguage(navigator.language?.slice(0, 2));
 };
 
-// Keep <html lang> in sync so screen readers pronounce content correctly.
+// Keep <html lang> in sync so screen readers pronounce content correctly,
+// and translate the tab title to match.
 i18n.on("languageChanged", (language) => {
   document.documentElement.lang = resolveLanguage(language);
+  document.title = `Kyle Heron — ${i18n.t("hero.title")}`;
 });
 
 i18n
