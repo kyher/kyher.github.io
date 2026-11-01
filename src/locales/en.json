@@ -50,5 +50,10 @@
     "eyebrow": "Education",
     "university": "University of Sunderland",
     "degree": "Bachelor’s degree · Digital and Technology Solutions"
+  },
+  "a11y": {
+    "home": "Kyle Heron, back to top",
+    "toggleTheme": "Toggle dark mode",
+    "projectScreenshot": "Screenshot of {{name}}"
   }
 }
