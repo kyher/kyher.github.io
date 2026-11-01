@@ -23,6 +23,10 @@ export default function ProjectTile({
           src={image}
           alt={`${name} screenshot`}
           className="project-image"
+          width={1200}
+          height={640}
+          loading="lazy"
+          decoding="async"
         />
       ) : (
         <div

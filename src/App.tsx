@@ -54,9 +54,9 @@ function App() {
   }, [isDark]);
 
   const featured = [
-    { name: "BetaReadr", descriptionKey: "betareadr", stack: "Laravel, Vue, Inertia, TypeScript", image: "betareadr.png", gradient: "from-purple-600 to-fuchsia-700", highlight: true },
-    { name: "Cochonnet", descriptionKey: "cochonnet", href: "https://github.com/kyher/cochonnet", stack: "Vite, React, TypeScript", image: "cochonnet.png", gradient: "from-stone-500 to-amber-700" },
-    { name: "C'est moi le chef", descriptionKey: "cest-moi-le-chef", href: "https://github.com/kyher/cest-moi-le-chef", stack: "Tanstack Start, TypeScript", image: "cestmoilechef.png", gradient: "from-orange-500 to-red-600" },
+    { name: "BetaReadr", descriptionKey: "betareadr", stack: "Laravel, Vue, Inertia, TypeScript", image: "betareadr.webp", gradient: "from-purple-600 to-fuchsia-700", highlight: true },
+    { name: "Cochonnet", descriptionKey: "cochonnet", href: "https://github.com/kyher/cochonnet", stack: "Vite, React, TypeScript", image: "cochonnet.webp", gradient: "from-stone-500 to-amber-700" },
+    { name: "C'est moi le chef", descriptionKey: "cest-moi-le-chef", href: "https://github.com/kyher/cest-moi-le-chef", stack: "Tanstack Start, TypeScript", image: "cestmoilechef.webp", gradient: "from-orange-500 to-red-600" },
   ];
   return (
     <main className="site-shell">
@@ -87,7 +87,7 @@ function App() {
           </div>
         </div>
         <div className="hero-photo-wrap">
-          <img src="profile.jpg" alt="Kyle Heron" className="hero-photo" />
+          <img src="profile.webp" alt="Kyle Heron" className="hero-photo" width={660} height={880} fetchPriority="high" />
         </div>
       </section>
 
