@@ -15,6 +15,7 @@
   --line: #e8dfd9;
   --accent: #7545c4;
   --accent-hover: #6036a7;
+  --on-accent: #ffffff;
   color: var(--ink);
   background: var(--page);
   font-synthesis: none;
@@ -33,6 +34,7 @@
   --line: #39333f;
   --accent: #b99ae9;
   --accent-hover: #a27bdb;
+  --on-accent: #17151b;
 }
 
 * { box-sizing: border-box; }

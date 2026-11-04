@@ -23,9 +23,7 @@
     "description": "Envie d’en savoir plus sur mon travail ou mon parcours ? Je serais ravi d’en discuter."
   },
   "language": {
-    "select": "Langue",
-    "en": "Anglais",
-    "fr": "Français"
+    "select": "Langue"
   },
   "projects": {
     "eyebrow": "En dehors du travail",

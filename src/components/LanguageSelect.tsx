@@ -4,6 +4,9 @@ import { LANGUAGE_STORAGE_KEY } from "../i18n";
 
 // Each language lives at its own URL, so switching is a plain link. The choice
 // is remembered so returning visitors to / land on their preferred version.
+// Each language is named in itself, so screen readers pronounce it correctly.
+const languageNames: Record<SupportedLanguage, string> = { en: "English", fr: "Français" };
+
 const rememberLanguage = (code: SupportedLanguage) => {
   try {
     localStorage.setItem(LANGUAGE_STORAGE_KEY, code);
@@ -25,11 +28,11 @@ export default function LanguageSelect() {
           hrefLang={code}
           lang={code}
           className="language-option"
-          aria-label={t(`language.${code}`)}
           aria-current={code === current ? "page" : undefined}
           onClick={() => rememberLanguage(code)}
         >
           {code.toUpperCase()}
+          <span className="sr-only"> — {languageNames[code]}</span>
         </a>
       ))}
     </nav>

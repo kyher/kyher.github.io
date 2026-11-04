@@ -100,7 +100,7 @@
   border: 1px solid var(--accent);
   border-radius: 999px;
   background: var(--accent);
-  color: white;
+  color: var(--on-accent);
   font-size: .92rem;
   font-weight: 700;
   text-decoration: none;
