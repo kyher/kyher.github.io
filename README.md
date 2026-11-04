@@ -10,9 +10,17 @@ Built with React, TypeScript, Vite and Tailwind CSS, with English and French tra
 npm install
 npm run dev      # start the dev server
 npm run lint     # run ESLint
-npm run build    # typecheck and build to dist/
+npm run build    # typecheck, build and prerender to dist/
 npm run preview  # serve the production build locally
 ```
+
+## How pages are built
+
+The site is prerendered at build time: `npm run build` builds the client, builds `src/entry-server.tsx` for Node, then `scripts/prerender.ts` renders each language into static HTML (`dist/index.html` for English, `dist/fr/index.html` for French) with its own title, description, canonical and `hreflang` tags. The browser hydrates that HTML.
+
+The language comes from the URL (`/` or `/fr/`). Visitors who choose French, or whose browser is French, are sent from `/` to `/fr/` by the inline script in `index.html`. Translatable head text (like the meta description) lives under `meta` in the locale files.
+
+The dev server renders client-side only, so check SEO output with `npm run build && npm run preview`.
 
 ## Editing content
 

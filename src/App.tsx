@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import "./App.css";
 import ProjectTile from "./components/ProjectTile";
 import ThemeToggle from "./components/ThemeToggle";
@@ -8,24 +8,34 @@ import { languageLocales, resolveLanguage } from "./helpers/language";
 import { formatRange } from "./helpers/date";
 import { experience, featured, skills } from "./data/portfolio";
 
+const subscribeToTheme = (onChange: () => void) => {
+  const observer = new MutationObserver(onChange);
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+  return () => observer.disconnect();
+};
+
+const isDarkTheme = () => document.documentElement.classList.contains("dark");
+
+const setTheme = (dark: boolean) => {
+  document.documentElement.classList.toggle("dark", dark);
+  try {
+    localStorage.setItem("theme", dark ? "dark" : "light");
+  } catch {
+    // Storage can be unavailable; the theme still applies for this visit.
+  }
+};
+
 function App() {
-  const [isDark, setIsDark] = useState(() =>
-    document.documentElement.classList.contains("dark"),
-  );
+  const isDark = useSyncExternalStore(subscribeToTheme, isDarkTheme, () => false);
   const { t, i18n } = useTranslation();
   const locale = languageLocales[resolveLanguage(i18n.resolvedLanguage)];
-
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", isDark);
-    localStorage.setItem("theme", isDark ? "dark" : "light");
-  }, [isDark]);
 
   return (
     <main className="site-shell">
       <header className="site-header">
         <a className="brand" href="#top" aria-label={t("a11y.home")}>KH<span>.</span></a>
         <div className="header-tools">
-          <ThemeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} />
+          <ThemeToggle isDark={isDark} onToggle={() => setTheme(!isDark)} />
           <span className="h-5 w-px bg-gray-300 dark:bg-gray-600" aria-hidden="true" />
           <LanguageSelect />
         </div>
@@ -49,7 +59,7 @@ function App() {
           </div>
         </div>
         <div className="hero-photo-wrap">
-          <img src="profile.webp" alt="Kyle Heron" className="hero-photo" width={660} height={880} fetchPriority="high" />
+          <img src="/profile.webp" alt="Kyle Heron" className="hero-photo" width={660} height={880} fetchPriority="high" />
         </div>
       </section>
 
@@ -118,7 +128,7 @@ function App() {
           </div>
         </div>
       </section>
-      <footer className="site-footer">© {new Date().getFullYear()} Kyle Heron</footer>
+      <footer className="site-footer" suppressHydrationWarning>© {new Date().getFullYear()} Kyle Heron</footer>
     </main>
   );
 }

@@ -7,23 +7,15 @@
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kyle Heron — Senior Software Engineer</title>
-  <meta name="description" content="Portfolio of Kyle Heron, a senior software engineer experienced in Laravel, Vue, React, TypeScript, and more." />
-  <meta property="og:title" content="Kyle Heron — Senior Software Engineer" />
-  <meta property="og:description" content="Portfolio of Kyle Heron, a senior software engineer experienced in Laravel, Vue, React, TypeScript, and more." />
+  <!--app-head-->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://kyher.github.io/" />
   <meta property="og:site_name" content="Kyle Heron" />
-  <meta property="og:locale" content="en_GB" />
-  <meta property="og:locale:alternate" content="fr_FR" />
   <meta property="og:image" content="https://kyher.github.io/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Kyle Heron, Senior Software Engineer" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Kyle Heron — Senior Software Engineer" />
-  <meta name="twitter:description" content="Portfolio of Kyle Heron, a senior software engineer experienced in Laravel, Vue, React, TypeScript, and more." />
   <meta name="twitter:image" content="https://kyher.github.io/og-image.jpg" />
-  <link rel="canonical" href="https://kyher.github.io/" />
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -41,10 +33,19 @@
   </script>
   <script>
     (function () {
-      const stored = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (stored === 'dark' || (!stored && prefersDark)) {
-        document.documentElement.classList.add('dark');
+      var root = document.documentElement;
+      try {
+        // Send visitors who prefer French from / to /fr/ before anything paints.
+        var language = localStorage.getItem('language') || (navigator.language || '').slice(0, 2);
+        if (location.pathname === '/' && language === 'fr') {
+          location.replace('/fr/' + location.hash);
+        }
+        var stored = localStorage.getItem('theme');
+        if (stored === 'dark' || (!stored && matchMedia('(prefers-color-scheme: dark)').matches)) {
+          root.classList.add('dark');
+        }
+      } catch (e) {
+        // Storage can be unavailable (e.g. blocked site data); use the defaults.
       }
     })();
   </script>

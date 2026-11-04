@@ -23,7 +23,7 @@ export default function ProjectTile({
     <>
       {image ? (
         <img
-          src={image}
+          src={`/${image}`}
           alt={t("a11y.projectScreenshot", { name })}
           className="project-image"
           width={1200}

@@ -1,4 +1,7 @@
 {
+  "meta": {
+    "description": "Portfolio of Kyle Heron, a senior software engineer experienced in Laravel, Vue, React, TypeScript, and more."
+  },
   "nav": {
     "home": "Home",
     "experience": "Experience",
