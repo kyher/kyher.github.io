@@ -1,4 +1,7 @@
 {
+  "meta": {
+    "description": "Portfolio de Kyle Heron, ingénieur logiciel senior expérimenté en Laravel, Vue, React, TypeScript et plus encore."
+  },
   "nav": {
     "home": "Accueil",
     "experience": "Expérience",

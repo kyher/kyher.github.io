@@ -32,8 +32,8 @@
 }
 
 .language-switch { display: flex; gap: 2px; }
-.language-option { padding: 4px 6px; border: 0; border-radius: 6px; background: transparent; color: var(--muted); font-size: .76rem; font-weight: 700; cursor: pointer; }
-.language-option[aria-pressed="true"] { background: color-mix(in srgb, var(--accent) 13%, transparent); color: var(--accent); }
+.language-option { padding: 4px 6px; text-decoration: none; border: 0; border-radius: 6px; background: transparent; color: var(--muted); font-size: .76rem; font-weight: 700; cursor: pointer; }
+.language-option[aria-current="page"] { background: color-mix(in srgb, var(--accent) 13%, transparent); color: var(--accent); }
 .language-option:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 .main-nav {
