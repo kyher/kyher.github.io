@@ -22,6 +22,15 @@ The language comes from the URL (`/` or `/fr/`). Visitors who choose French, or 
 
 The dev server renders client-side only, so check SEO output with `npm run build && npm run preview`.
 
+## Lighthouse
+
+Pull requests run [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci) against the prerendered `/` and `/fr/` pages (config in `lighthouserc.json`). Accessibility, best practices and SEO must score 100; performance below 90 is a warning. Each run links to its reports in the job log and uploads them as an artifact. To run it locally:
+
+```
+npm run build
+npx @lhci/cli@0.16.0 autorun
+```
+
 ## Editing content
 
 - **Skills, experience and projects:** `src/data/portfolio.ts`

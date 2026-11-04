@@ -23,9 +23,7 @@
     "description": "Want to know more about my work or experience? I’d be happy to chat."
   },
   "language": {
-    "select": "Language",
-    "en": "English",
-    "fr": "French"
+    "select": "Language"
   },
   "projects": {
     "eyebrow": "Outside of work",

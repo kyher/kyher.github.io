@@ -22,3 +22,9 @@ jobs:
         run: npm run lint
       - name: Typecheck and build
         run: npm run build
+      - name: Lighthouse
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          configPath: ./lighthouserc.json
+          uploadArtifacts: true
+          temporaryPublicStorage: true
