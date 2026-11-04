@@ -6,7 +6,7 @@ on:
     branches-ignore: ["master"]
 
 jobs:
-  lint-and-build:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -20,8 +20,40 @@ jobs:
         run: npm ci
       - name: Lint
         run: npm run lint
-      - name: Typecheck and build
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: lts/*
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Typecheck, build and prerender
         run: npm run build
+      - name: Upload build
+        uses: actions/upload-artifact@v7
+        with:
+          name: dist
+          path: dist
+          retention-days: 7
+
+  # Audits the exact build from the job above, so no install or rebuild here.
+  lighthouse:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Download build
+        uses: actions/download-artifact@v8
+        with:
+          name: dist
+          path: dist
       - name: Lighthouse
         uses: treosh/lighthouse-ci-action@v12
         with:
