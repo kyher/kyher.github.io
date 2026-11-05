@@ -1,9 +1,8 @@
 name: CI
 
+# Pull requests only: also running on branch pushes ran every check twice.
 on:
   pull_request:
-  push:
-    branches-ignore: ["master"]
 
 jobs:
   lint:
