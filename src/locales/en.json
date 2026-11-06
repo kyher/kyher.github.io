@@ -28,7 +28,7 @@
   "projects": {
     "eyebrow": "Outside of work",
     "title": "Side projects",
-    "description": "A few things I’ve built alongside my day job.",
+    "description": "A few things I’ve built alongside my day job. They double as a playground for trying out different AI-assisted development workflows, such as <specKit>spec-driven development</specKit> and skills like <grillWithDocs>grill-with-docs</grillWithDocs>.",
     "github": "More on GitHub ↗",
     "cest-moi-le-chef": "An application for managing recipes",
     "cochonnet": "A solo, daily score-attack game based on pétanque",

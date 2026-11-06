@@ -2,7 +2,7 @@ import { useSyncExternalStore } from "react";
 import "./App.css";
 import ProjectTile from "./components/ProjectTile";
 import ThemeToggle from "./components/ThemeToggle";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import LanguageSelect from "./components/LanguageSelect";
 import { languageLocales, resolveLanguage } from "./helpers/language";
 import { formatRange } from "./helpers/date";
@@ -96,7 +96,7 @@ function App() {
 
       <section className="section" id="projects">
         <div className="section-heading">
-          <div><p className="eyebrow">{t("projects.eyebrow")}</p><h2>{t("projects.title")}</h2><p>{t("projects.description")}</p></div>
+          <div><p className="eyebrow">{t("projects.eyebrow")}</p><h2>{t("projects.title")}</h2><p><Trans i18nKey="projects.description" components={{ specKit: <a href="https://github.com/github/spec-kit" target="_blank" rel="noopener noreferrer" />, grillWithDocs: <a href="https://github.com/mattpocock/skills/tree/main/skills/engineering/grill-with-docs" target="_blank" rel="noopener noreferrer" /> }} /></p></div>
         </div>
         <div className="featured-projects">
           <ProjectTile {...featured[0]} description={t(`projects.${featured[0].descriptionKey}`)} />
