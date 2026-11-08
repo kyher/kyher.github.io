@@ -30,8 +30,8 @@
     "title": "Side projects",
     "description": "A few things I’ve built alongside my day job. They double as a playground for trying out different AI-assisted development workflows, such as <specKit>spec-driven development</specKit> and skills like <grillWithDocs>grill-with-docs</grillWithDocs>.",
     "github": "More on GitHub ↗",
+    "ourlittlelist": "A private shared review list for couples — films, series, books, food and restaurants.",
     "cest-moi-le-chef": "An application for managing recipes",
-    "cochonnet": "A solo, daily score-attack game based on pétanque",
     "betareadr": "BetaReadr brings authors seeking useful, pre-publication feedback together with beta readers who want to help shape books they care about."
   },
   "hero": {
