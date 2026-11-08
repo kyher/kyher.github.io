@@ -30,8 +30,8 @@
     "title": "Projets personnels",
     "description": "Quelques projets que j’ai réalisés en parallèle de mon travail. Ils me servent aussi de terrain d’expérimentation pour essayer différents workflows de développement assisté par IA, comme le <specKit>développement piloté par les spécifications</specKit> et des skills comme <grillWithDocs>grill-with-docs</grillWithDocs>.",
     "github": "Plus sur GitHub ↗",
+    "ourlittlelist": "Une liste d’avis privée et partagée pour les couples — films, séries, livres, cuisine et restaurants.",
     "cest-moi-le-chef": "Une application pour gérer les recettes",
-    "cochonnet": "Un jeu solo en attaque de score quotidien basé sur la pétanque",
     "betareadr": "BetaReadr met en relation les auteurs à la recherche de retours utiles avant publication et les bêta-lecteurs qui souhaitent contribuer à façonner les livres qui leur tiennent à cœur."
   },
   "hero": {
