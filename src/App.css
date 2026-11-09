@@ -36,6 +36,11 @@
 .language-option[aria-current="page"] { background: color-mix(in srgb, var(--accent) 13%, transparent); color: var(--accent); }
 .language-option:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
+.header-divider { width: 1px; height: 1.25rem; background: var(--divider); }
+.theme-toggle { display: flex; cursor: pointer; color: var(--toggle); border-radius: .25rem; transition: color .15s cubic-bezier(.4, 0, .2, 1); }
+@media (hover: hover) { .theme-toggle:hover { color: var(--toggle-hover); } }
+.theme-toggle:focus-visible { outline: none; box-shadow: 0 0 0 2px oklch(62.7% .265 303.9); }
+
 .main-nav {
   display: flex;
   justify-content: center;
@@ -178,21 +183,12 @@ a.project-card:hover {
   box-shadow: 0 18px 44px rgb(40 25 20 / 9%);
 }
 
-.project-image,
-.project-art {
+.project-image {
   display: block;
   width: 100%;
   height: 190px;
   object-fit: cover;
   object-position: top;
-}
-
-.project-art {
-  display: grid;
-  place-items: center;
-  color: rgb(255 255 255 / 75%);
-  font-size: 3rem;
-  font-weight: 800;
 }
 
 .project-featured {
@@ -201,8 +197,7 @@ a.project-card:hover {
   min-height: 340px;
 }
 
-.project-featured .project-image,
-.project-featured .project-art { height: 100%; min-height: 340px; }
+.project-featured .project-image { height: 100%; min-height: 340px; }
 .project-body { display: flex; flex: 1; flex-direction: column; padding: 24px; }
 .project-name { margin: 0 0 8px; font-size: 1.28rem; letter-spacing: -.015em; }
 .project-stack { margin: 0 0 12px; color: var(--accent); font-size: .82rem; font-weight: 700; }
@@ -244,8 +239,7 @@ a.project-card:hover {
   .section-heading { align-items: start; flex-direction: column; }
   .employer { grid-template-columns: 1fr; gap: 22px; }
   .project-featured { grid-template-columns: 1fr; }
-  .project-featured .project-image, .project-featured .project-art { height: 240px; min-height: 0; }
-  .featured-secondary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .project-featured .project-image { height: 240px; min-height: 0; }
   .contact-panel { align-items: start; flex-direction: column; }
   .contact-links { justify-content: flex-start; }
 }
@@ -254,5 +248,4 @@ a.project-card:hover {
   .brand { font-size: .92rem; }
   .header-tools { font-size: .85rem; }
   .featured-secondary { grid-template-columns: 1fr; }
-  .project-image, .project-art { height: 190px; }
 }

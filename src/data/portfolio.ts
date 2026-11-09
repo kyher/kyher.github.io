@@ -28,7 +28,7 @@ export const experience = [
 ];
 
 export const featured = [
-  { name: "Our Little List", descriptionKey: "ourlittlelist", href: "https://github.com/kyher/ourlittlelist", stack: "Laravel, Livewire", image: "ourlittlelist.webp", gradient: "from-rose-500 to-pink-700", highlight: true },
-  { name: "BetaReadr", descriptionKey: "betareadr", href: "https://github.com/kyher/betareadr", stack: "Laravel, Vue, Inertia, TypeScript", image: "betareadr.webp", gradient: "from-purple-600 to-fuchsia-700" },
-  { name: "C'est moi le chef", descriptionKey: "cest-moi-le-chef", href: "https://github.com/kyher/cest-moi-le-chef", stack: "Tanstack Start, TypeScript", image: "cestmoilechef.webp", gradient: "from-orange-500 to-red-600" },
+  { name: "Our Little List", descriptionKey: "ourlittlelist", href: "https://github.com/kyher/ourlittlelist", stack: "Laravel, Livewire", image: "ourlittlelist.webp", highlight: true },
+  { name: "BetaReadr", descriptionKey: "betareadr", href: "https://github.com/kyher/betareadr", stack: "Laravel, Vue, Inertia, TypeScript", image: "betareadr.webp" },
+  { name: "C'est moi le chef", descriptionKey: "cest-moi-le-chef", href: "https://github.com/kyher/cest-moi-le-chef", stack: "Tanstack Start, TypeScript", image: "cestmoilechef.webp" },
 ];

@@ -11,7 +11,7 @@ export default function ThemeToggle({
   return (
     <button
       onClick={onToggle}
-      className="flex cursor-pointer text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 rounded-sm"
+      className="theme-toggle"
       aria-label={t("a11y.toggleTheme")}
       aria-pressed={isDark}
     >
