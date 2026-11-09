@@ -41,7 +41,7 @@ Rationale: an engineer's own site is direct evidence of the care they bring to t
 - English and French MUST both be complete. A user-facing string MUST NOT be added in one
   language only, and this includes metadata, structured data and alternative text.
 - Proper nouns, such as people, employers, products, technologies and official qualification
-  names, MAY remain untranslated.
+  names, and the job titles in the employment history, MAY remain untranslated.
 - Each language MUST be served from its own URL with its own title, description, canonical and
   `hreflang` tags.
 - User-facing text MUST live in the locale files, and structured content MUST live in the data
@@ -97,4 +97,4 @@ document.
 - Compliance: every pull request and plan MUST be reviewed against these principles. An exception
   MUST be justified in the pull request or plan, and existing gaps MUST be tracked in issues.
 
-**Version**: 1.0.0 | **Ratified**: 2026-11-09 | **Last Amended**: 2026-11-09
+**Version**: 1.0.1 | **Ratified**: 2026-11-09 | **Last Amended**: 2026-11-09

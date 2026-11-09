@@ -1,10 +1,11 @@
 // Fills the built index.html with each language's rendered markup and head
-// tags, writing dist/index.html (English) and dist/fr/index.html (French).
+// tags, writing dist/index.html (English), dist/fr/index.html (French) and
+// dist/404.html (both languages, with no client JavaScript).
 import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 
-type Page = { language: string; path: string; title: string; head: string; html: string };
+type Page = { language: string; output: string; title: string; head: string; html: string; hydrate: boolean };
 
 const root = path.resolve(import.meta.dirname, "..");
 const distDir = path.join(root, "dist");
@@ -26,11 +27,12 @@ for (const page of renderPages()) {
   html = replaceOnce(html, /<title>.*?<\/title>/, `<title>${page.title}</title>`);
   html = replaceOnce(html, "<!--app-head-->", page.head);
   html = replaceOnce(html, '<div id="root"></div>', `<div id="root">${page.html}</div>`);
+  if (!page.hydrate) html = replaceOnce(html, /<script type="module"[^>]*><\/script>\s*/, "");
 
-  const outDir = path.join(distDir, page.path);
-  await mkdir(outDir, { recursive: true });
-  await writeFile(path.join(outDir, "index.html"), html);
-  console.log(`prerendered ${page.path}`);
+  const outFile = path.join(distDir, page.output);
+  await mkdir(path.dirname(outFile), { recursive: true });
+  await writeFile(outFile, html);
+  console.log(`prerendered ${page.output}`);
 }
 
 await rm(ssrDir, { recursive: true, force: true });

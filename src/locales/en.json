@@ -1,6 +1,7 @@
 {
   "meta": {
-    "description": "Portfolio of Kyle Heron, a senior software engineer experienced in Laravel, Vue, React, TypeScript, and more."
+    "description": "Portfolio of Kyle Heron, a senior software engineer experienced in Laravel, Vue, React, TypeScript, and more.",
+    "imageAlt": "Kyle Heron, Senior Software Engineer"
   },
   "nav": {
     "home": "Home",
@@ -52,7 +53,13 @@
     "university": "University of Sunderland",
     "degree": "Bachelor’s degree · Digital and Technology Solutions"
   },
+  "notFound": {
+    "title": "Page not found",
+    "description": "This page doesn’t exist or has moved.",
+    "home": "Back to the home page"
+  },
   "a11y": {
+    "skipToContent": "Skip to main content",
     "home": "Kyle Heron, back to top",
     "toggleTheme": "Toggle dark mode",
     "projectScreenshot": "Screenshot of {{name}}"
