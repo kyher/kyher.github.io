@@ -139,7 +139,7 @@ description: "Task list for fixing the small site bugs in issue #66"
 - [X] T016 [P] In .github/workflows/ci.yml, add a step named `Test` that runs `npm test` straight after the `Lint` step in the `lint` job
 - [X] T017 [P] In README.md, add `npm test` to the Development commands, explain in "How pages are built" that language links carry `?lang=` and that the first-load script saves it and removes it from the address, and update the Deployment section to say pull requests also run tests
 - [X] T018 Using the scripts in package.json, run `npm run lint`, `npm test` and `npm run build`, and fix any failures
-- [ ] T019 Run all scenarios and the quality gates in specs/001-fix-small-bugs/quickstart.md, adjusting the `letter-spacing` values in src/App.css if scenario 11 shows touching letters or overflow
+- [X] T019 Run all scenarios and the quality gates in specs/001-fix-small-bugs/quickstart.md, adjusting the `letter-spacing` values in src/App.css if scenario 11 shows touching letters or overflow
 
 ---
 

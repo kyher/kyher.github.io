@@ -109,8 +109,8 @@ No foundational work is needed. The baseline in Phase 1 is the only prerequisite
 
 - [X] T020 Run `npm run lint`, `npm test` and `npm run build` using package.json, fix any failures, and confirm dist/404.html exists with no `type="module"` script
 - [X] T021 Following section 3 of specs/003-accessibility-seo/quickstart.md, repeat the screenshots and compare them with the baseline, investigating and fixing any differences other than the apostrophes in the French profile paragraph
-- [ ] T022 Run scenarios 1 to 13 in section 4 of specs/003-accessibility-seo/quickstart.md
-- [ ] T023 After the pull request is opened, confirm that Lighthouse passes on all three pages as described in section 5 of specs/003-accessibility-seo/quickstart.md
+- [X] T022 Run scenarios 1 to 13 in section 4 of specs/003-accessibility-seo/quickstart.md
+- [X] T023 After the pull request is opened, confirm that Lighthouse passes on all three pages as described in section 5 of specs/003-accessibility-seo/quickstart.md
 
 ---
 

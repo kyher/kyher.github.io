@@ -77,8 +77,8 @@ No foundational work is needed. The baseline in Phase 1 is the only prerequisite
 
 - [X] T014 Run `npm ci`, `npm run lint`, `npm test` and `npm run build` using package.json, and fix any failures
 - [X] T015 Following section 3 of specs/002-simplify-frontend/quickstart.md, repeat the 12 screenshots and compare each with its baseline pixel by pixel, investigating and fixing any differences in src/index.css or src/App.css
-- [ ] T016 Run scenarios 1 to 8 in section 4 of specs/002-simplify-frontend/quickstart.md, restoring src/data/portfolio.ts after scenario 6
-- [ ] T017 After the pull request is opened, confirm that Lighthouse passes as described in section 5 of specs/002-simplify-frontend/quickstart.md
+- [X] T016 Run scenarios 1 to 8 in section 4 of specs/002-simplify-frontend/quickstart.md, restoring src/data/portfolio.ts after scenario 6
+- [X] T017 After the pull request is opened, confirm that Lighthouse passes as described in section 5 of specs/002-simplify-frontend/quickstart.md
 
 ---
 
