@@ -10,6 +10,7 @@ Built with React, TypeScript, Vite and Tailwind CSS, with English and French tra
 npm install
 npm run dev      # start the dev server
 npm run lint     # run ESLint
+npm test         # test the first-load script in index.html
 npm run build    # typecheck, build and prerender to dist/
 npm run preview  # serve the production build locally
 ```
@@ -18,7 +19,7 @@ npm run preview  # serve the production build locally
 
 The site is prerendered at build time: `npm run build` builds the client, builds `src/entry-server.tsx` for Node, then `scripts/prerender.ts` renders each language into static HTML (`dist/index.html` for English, `dist/fr/index.html` for French) with its own title, description, canonical and `hreflang` tags. The browser hydrates that HTML.
 
-The language comes from the URL (`/` or `/fr/`). Visitors who choose French, or whose browser is French, are sent from `/` to `/fr/` by the inline script in `index.html`. Translatable head text (like the meta description) lives under `meta` in the locale files.
+The language comes from the URL (`/` or `/fr/`). Visitors who choose French, or whose browser is French, are sent from `/` to `/fr/` by the inline script in `index.html`. Language links carry the choice as `?lang=`, so it works however the link is opened. The script saves it and removes it from the address. Canonical and `hreflang` URLs never include it. Translatable head text (like the meta description) lives under `meta` in the locale files.
 
 The dev server renders client-side only, so check SEO output with `npm run build && npm run preview`.
 
@@ -39,4 +40,4 @@ npx @lhci/cli@0.16.0 autorun
 
 ## Deployment
 
-Every push to `master` is linted, built and deployed to GitHub Pages by `.github/workflows/deploy.yml`. Pull requests run lint and build in `.github/workflows/ci.yml`.
+Every push to `master` is linted, built and deployed to GitHub Pages by `.github/workflows/deploy.yml`. Pull requests run lint, tests and build in `.github/workflows/ci.yml`.

@@ -15,7 +15,7 @@
   color: var(--ink);
   font-size: 1rem;
   font-weight: 750;
-  letter-spacing: -0.04em;
+  letter-spacing: -.02em;
   text-decoration: none;
 }
 
@@ -78,7 +78,7 @@
   margin: 0;
   font-size: clamp(2.5rem, 6vw, 4.4rem);
   line-height: 1.04;
-  letter-spacing: -.065em;
+  letter-spacing: -.03em;
 }
 
 .hero-copy {
@@ -137,7 +137,7 @@
 .section { padding: 76px 0; scroll-margin-top: 24px; }
 .section + .section { border-top: 1px solid var(--line); }
 .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 30px; }
-.section-heading h2 { margin: 0; font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -.055em; }
+.section-heading h2 { margin: 0; font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -.025em; }
 .section-heading .eyebrow { margin: 0 0 12px; }
 .section-heading > div > p:not(.eyebrow) { margin: 8px 0 0; color: var(--muted); }
 .section-heading > div > p a { color: var(--accent); font-weight: 600; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
@@ -145,7 +145,7 @@
 
 .experience-list { border-top: 1px solid var(--line); }
 .employer { display: grid; grid-template-columns: minmax(180px, .65fr) minmax(0, 1fr); gap: 32px; padding: 30px 0; border-bottom: 1px solid var(--line); }
-.employer-heading h3, .education h3 { margin: 0 0 4px; font-size: 1.2rem; letter-spacing: -.03em; }
+.employer-heading h3, .education h3 { margin: 0 0 4px; font-size: 1.2rem; letter-spacing: -.015em; }
 .employer-heading p, .education > p:last-child { margin: 0; color: var(--muted); font-size: .9rem; }
 .role-list { position: relative; display: grid; gap: 18px; margin: 0; padding: 0 0 0 24px; list-style: none; }
 .role-list::before { position: absolute; top: 7px; bottom: 7px; left: 4px; width: 2px; background: var(--line); content: ""; }
@@ -204,7 +204,7 @@ a.project-card:hover {
 .project-featured .project-image,
 .project-featured .project-art { height: 100%; min-height: 340px; }
 .project-body { display: flex; flex: 1; flex-direction: column; padding: 24px; }
-.project-name { margin: 0 0 8px; font-size: 1.28rem; letter-spacing: -.035em; }
+.project-name { margin: 0 0 8px; font-size: 1.28rem; letter-spacing: -.015em; }
 .project-stack { margin: 0 0 12px; color: var(--accent); font-size: .82rem; font-weight: 700; }
 .project-description { margin: 0; color: var(--muted); font-size: .94rem; line-height: 1.65; }
 .github-more { margin: 26px 0 0; text-align: center; }
@@ -223,7 +223,7 @@ a.project-card:hover {
   color: var(--page);
 }
 
-.contact-panel h2 { margin: 0 0 8px; font-size: clamp(1.7rem, 4vw, 2.5rem); letter-spacing: -.05em; }
+.contact-panel h2 { margin: 0 0 8px; font-size: clamp(1.7rem, 4vw, 2.5rem); letter-spacing: -.025em; }
 .contact-panel p { margin: 0; color: color-mix(in srgb, var(--page) 72%, transparent); }
 .dark .contact-panel .button { color: #211e26; }
 .contact-links { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 12px 20px; }

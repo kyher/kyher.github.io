@@ -5,6 +5,9 @@ export type SupportedLanguage = keyof typeof languageLocales;
 export const languagePaths: Record<SupportedLanguage, string> = { en: "/", fr: "/fr/" };
 export const languages = Object.keys(languagePaths) as SupportedLanguage[];
 
+// Language links carry the choice for the first-load script in index.html.
+export const languageHref = (language: SupportedLanguage) => `${languagePaths[language]}?lang=${language}`;
+
 export const resolveLanguage = (language?: string): SupportedLanguage =>
   language === "fr" ? "fr" : "en";
 
