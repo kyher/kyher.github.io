@@ -34,18 +34,48 @@
   <script>
     (function () {
       var root = document.documentElement;
-      try {
-        // Send visitors who prefer French from / to /fr/ before anything paints.
-        var language = localStorage.getItem('language') || (navigator.language || '').slice(0, 2);
-        if (location.pathname === '/' && language === 'fr') {
-          location.replace('/fr/' + location.hash);
+
+      // Storage can be unavailable (e.g. blocked site data), which counts as nothing saved.
+      function readStored(key) {
+        try {
+          return localStorage.getItem(key);
+        } catch (e) {
+          return null;
         }
-        var stored = localStorage.getItem('theme');
-        if (stored === 'dark' || (!stored && matchMedia('(prefers-color-scheme: dark)').matches)) {
-          root.classList.add('dark');
+      }
+
+      function writeStored(key, value) {
+        try {
+          localStorage.setItem(key, value);
+          return true;
+        } catch (e) {
+          return false;
         }
-      } catch (e) {
-        // Storage can be unavailable (e.g. blocked site data); use the defaults.
+      }
+
+      // Language links carry the visitor's choice in ?lang=, so it works however
+      // the link was opened. It stays in the address if it couldn't be saved, so
+      // that reloading keeps the choice.
+      var params = new URLSearchParams(location.search);
+      var chosen = params.get('lang');
+      if (chosen !== 'en' && chosen !== 'fr') {
+        chosen = null;
+      }
+      if (chosen && writeStored('language', chosen)) {
+        params.delete('lang');
+        var query = params.toString();
+        history.replaceState(null, '', location.pathname + (query ? '?' + query : '') + location.hash);
+      }
+
+      // Send visitors who prefer French from / to /fr/ before anything paints.
+      var language = chosen || readStored('language') || (navigator.language || '').slice(0, 2);
+      if (location.pathname === '/' && language === 'fr') {
+        location.replace('/fr/' + location.search + location.hash);
+      }
+
+      var stored = readStored('theme');
+      if (stored === 'dark' || (!stored && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        root.classList.add('dark');
       }
     })();
   </script>

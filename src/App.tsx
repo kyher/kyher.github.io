@@ -128,7 +128,7 @@ function App() {
           </div>
         </div>
       </section>
-      <footer className="site-footer" suppressHydrationWarning>© {new Date().getFullYear()} Kyle Heron</footer>
+      <footer className="site-footer">© Kyle Heron</footer>
     </main>
   );
 }

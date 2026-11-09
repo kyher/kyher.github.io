@@ -4,10 +4,6 @@ import en from "./locales/en.json";
 import fr from "./locales/fr.json";
 import type { SupportedLanguage } from "./helpers/language";
 
-// Remembers an explicit language choice so the inline script in index.html
-// can send returning visitors from / to their preferred version.
-export const LANGUAGE_STORAGE_KEY = "language";
-
 const resources = {
   en: { translation: en },
   fr: { translation: fr },
