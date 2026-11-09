@@ -21,6 +21,8 @@ The site is prerendered at build time: `npm run build` builds the client, builds
 
 The language comes from the URL (`/` or `/fr/`). Visitors who choose French, or whose browser is French, are sent from `/` to `/fr/` by the inline script in `index.html`. Language links carry the choice as `?lang=`, so it works however the link is opened. The script saves it and removes it from the address. Canonical and `hreflang` URLs never include it. Translatable head text (like the meta description) lives under `meta` in the locale files.
 
+`dist/404.html` is prerendered with both languages and no client JavaScript, because GitHub Pages serves one error page for every missing path.
+
 The dev server renders client-side only, so check SEO output with `npm run build && npm run preview`.
 
 ## Lighthouse
