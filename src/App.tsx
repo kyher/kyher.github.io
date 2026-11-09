@@ -36,7 +36,7 @@ function App() {
         <a className="brand" href="#top">KH<span aria-hidden="true">.</span><span className="sr-only"> — {t("a11y.home")}</span></a>
         <div className="header-tools">
           <ThemeToggle isDark={isDark} onToggle={() => setTheme(!isDark)} />
-          <span className="h-5 w-px bg-gray-300 dark:bg-gray-600" aria-hidden="true" />
+          <span className="header-divider" aria-hidden="true" />
           <LanguageSelect />
         </div>
       </header>

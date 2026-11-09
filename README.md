@@ -2,7 +2,7 @@
 
 Personal portfolio for Kyle Heron, live at **https://kyher.github.io**.
 
-Built with React, TypeScript, Vite and Tailwind CSS, with English and French translations via i18next.
+Built with React, TypeScript and Vite, with English and French translations via i18next.
 
 ## Development
 

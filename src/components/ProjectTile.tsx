@@ -7,38 +7,27 @@ export default function ProjectTile({
   href,
   highlight,
   image,
-  gradient = "from-gray-600 to-gray-700",
 }: {
   name: string;
   stack: string;
   description: string;
   href?: string;
   highlight?: boolean;
-  image?: string;
-  gradient?: string;
+  image: string;
 }) {
   const { t } = useTranslation();
   const className = `project-card ${highlight ? "project-featured" : ""}`;
   const content = (
     <>
-      {image ? (
-        <img
-          src={`/${image}`}
-          alt={t("a11y.projectScreenshot", { name })}
-          className="project-image"
-          width={1200}
-          height={640}
-          loading="lazy"
-          decoding="async"
-        />
-      ) : (
-        <div
-          className={`project-art bg-gradient-to-br ${gradient}`}
-          aria-hidden="true"
-        >
-          {name[0]}
-        </div>
-      )}
+      <img
+        src={`/${image}`}
+        alt={t("a11y.projectScreenshot", { name })}
+        className="project-image"
+        width={1200}
+        height={640}
+        loading="lazy"
+        decoding="async"
+      />
       <div className="project-body">
         <h3 className="project-name">{name}</h3>
         <p className="project-stack">{stack}</p>
