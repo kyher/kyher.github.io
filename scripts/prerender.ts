@@ -1,6 +1,6 @@
 // Fills the built index.html with each language's rendered markup and head
 // tags, writing dist/index.html (English), dist/fr/index.html (French) and
-// dist/404.html (both languages, with no client JavaScript).
+// dist/404.html (both languages, with no client JavaScript), plus dist/sitemap.xml.
 import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
@@ -12,7 +12,10 @@ const distDir = path.join(root, "dist");
 const ssrDir = path.join(root, "dist-ssr");
 
 const entry = pathToFileURL(path.join(ssrDir, "entry-server.js")).href;
-const { renderPages } = (await import(entry)) as { renderPages: () => Page[] };
+const { renderPages, renderSitemap } = (await import(entry)) as {
+  renderPages: () => Page[];
+  renderSitemap: () => string;
+};
 const template = await readFile(path.join(distDir, "index.html"), "utf8");
 
 // Fail the build loudly if index.html drifts away from what we expect.
@@ -34,5 +37,8 @@ for (const page of renderPages()) {
   await writeFile(outFile, html);
   console.log(`prerendered ${page.output}`);
 }
+
+await writeFile(path.join(distDir, "sitemap.xml"), renderSitemap());
+console.log("generated sitemap.xml");
 
 await rm(ssrDir, { recursive: true, force: true });

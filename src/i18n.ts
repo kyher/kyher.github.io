@@ -4,6 +4,10 @@ import en from "./locales/en.json";
 import fr from "./locales/fr.json";
 import type { SupportedLanguage } from "./helpers/language";
 
+// Each language must have exactly the same keys as the other.
+fr satisfies typeof en;
+en satisfies typeof fr;
+
 const resources = {
   en: { translation: en },
   fr: { translation: fr },

@@ -9,26 +9,31 @@ export const skills = [
 export const experience = [
   {
     company: "Komodo Digital",
-    period: ["2020-02", null] as const,
+    period: ["2020-02", null],
     roles: [
-      { title: "Senior Software Engineer", dates: ["2026-03", null] as const },
-      { title: "Software Engineer", dates: ["2023-04", "2026-03"] as const },
-      { title: "Software QA Engineer", dates: ["2021-04", "2023-04"] as const },
-      { title: "Associate Software Quality Assurance Engineer", dates: ["2020-02", "2021-04"] as const },
+      { title: "Senior Software Engineer", dates: ["2026-03", null] },
+      { title: "Software Engineer", dates: ["2023-04", "2026-03"] },
+      { title: "Software QA Engineer", dates: ["2021-04", "2023-04"] },
+      { title: "Associate Software Quality Assurance Engineer", dates: ["2020-02", "2021-04"] },
     ],
   },
   {
     company: "Accenture",
-    period: ["2014-09", "2020-02"] as const,
+    period: ["2014-09", "2020-02"],
     roles: [
-      { title: "Application Support Engineer", dates: ["2017-09", "2020-02"] as const },
-      { title: "Associate Software Engineer", type: "apprenticeship", dates: ["2014-09", "2017-09"] as const },
+      { title: "Application Support Engineer", dates: ["2017-09", "2020-02"] },
+      { title: "Associate Software Engineer", type: "apprenticeship", dates: ["2014-09", "2017-09"] },
     ],
   },
-];
+] as const;
 
 export const featured = [
   { name: "Our Little List", descriptionKey: "ourlittlelist", href: "https://github.com/kyher/ourlittlelist", stack: "Laravel, Livewire", image: "ourlittlelist.webp", highlight: true },
   { name: "BetaReadr", descriptionKey: "betareadr", href: "https://github.com/kyher/betareadr", stack: "Laravel, Vue, Inertia, TypeScript", image: "betareadr.webp" },
   { name: "C'est moi le chef", descriptionKey: "cest-moi-le-chef", href: "https://github.com/kyher/cest-moi-le-chef", stack: "Tanstack Start, TypeScript", image: "cestmoilechef.webp" },
-];
+] as const;
+
+export const profiles = {
+  github: "https://github.com/kyher",
+  linkedin: "https://www.linkedin.com/in/kyher/",
+} as const;
