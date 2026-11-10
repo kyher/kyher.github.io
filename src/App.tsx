@@ -6,7 +6,7 @@ import { Trans, useTranslation } from "react-i18next";
 import LanguageSelect from "./components/LanguageSelect";
 import { languageLocales, resolveLanguage } from "./helpers/language";
 import { formatRange } from "./helpers/date";
-import { experience, featured, skills } from "./data/portfolio";
+import { experience, featured, profiles, skills } from "./data/portfolio";
 
 const subscribeToTheme = (onChange: () => void) => {
   const observer = new MutationObserver(onChange);
@@ -108,7 +108,7 @@ function App() {
               ))}
             </div>
           </div>
-          <p className="github-more"><a className="text-link" href="https://github.com/kyher" target="_blank" rel="noopener noreferrer">{t("projects.github")}</a></p>
+          <p className="github-more"><a className="text-link" href={profiles.github} target="_blank" rel="noopener noreferrer">{t("projects.github")}</a></p>
         </section>
 
         <section className="section" id="skills">
@@ -125,8 +125,8 @@ function App() {
             <div><p className="eyebrow">{t("contact.eyebrow")}</p><h2>{t("contact.title")}</h2><p>{t("contact.description")}</p></div>
             <div className="contact-links">
               <a className="button" href="mailto:kyleheron4@gmail.com">{t("contact.email")}</a>
-              <a href="https://github.com/kyher" target="_blank" rel="noopener noreferrer">GitHub</a>
-              <a href="https://www.linkedin.com/in/kyher/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href={profiles.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href={profiles.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
           </div>
         </section>
