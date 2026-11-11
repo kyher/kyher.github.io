@@ -22,7 +22,6 @@ export const createI18n = (language: SupportedLanguage): i18n => {
     lng: language,
     fallbackLng: "en",
     initAsync: false,
-    showSupportNotice: false,
     interpolation: {
       escapeValue: false, // React already escapes rendered values
     },
